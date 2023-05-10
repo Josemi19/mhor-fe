@@ -1,16 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { OffCanvas } from "./OffCanvas.jsx";
 
 export const Navbar = () => {
 	return (
-		<nav className="navbar navbar-light bg-light mb-3">
-			<Link to="/">
-				<span className="navbar-brand mb-0 h1">React Boilerplate</span>
-			</Link>
-			<div className="ml-auto">
-				<Link to="/demo">
-					<button className="btn btn-primary">Check the Context in action</button>
-				</Link>
+		<nav className="navbar navbar-expand-lg bg-body-tertiary">
+			<div className="container-fluid">
+				<Link to={"/"} className="navbar-brand">MHOR</Link>
+				<div className="d-flex">
+					<Link to={'/cart'} className="mt-2" style={{"textDecoration": "none", "color": "black"}}>
+						<span>0</span>
+						<i className="fa-solid fa-bag-shopping mx-2" style={{"color": "#000000"}}></i>
+					</Link>
+					<OffCanvas/>
+				</div>
 			</div>
 		</nav>
 	);
