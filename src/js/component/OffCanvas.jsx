@@ -1,24 +1,21 @@
 import React from 'react'
 import "../../styles/offCanvas.css"
+import { Link } from 'react-router-dom'
 
 export const OffCanvas = () => {
     return (
         <>
-            <button className="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-            <i className="bi bi-list" style={{"fontSize": "20px"}}></i>
+            <button className="btn  d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive">
+                <i className="bi bi-list" style={{"fontSize": "20px"}}></i>
             </button>
 
-            <div className="offcanvas offcanvas-start" tabIndex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div className="offcanvas-lg offcanvas-end" tabIndex="-1" id="offcanvasResponsive" aria-labelledby="offcanvasResponsiveLabel">
                 <div className="offcanvas-header">
-                    <h5 className="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
-                    <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <h5 className="offcanvas-title" id="offcanvasResponsiveLabel">Mhor Style</h5>
+                    <button type="button" className="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive" aria-label="Close"></button>
                 </div>
                 <div className="offcanvas-body">
-                    <ul className="">
-                        <li><a className="dropdown-item" href="#">Action</a></li>
-                        <li><a className="dropdown-item" href="#">Another action</a></li>
-                        <li><a className="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
+                    <Link to={"/productos"} style={{ "textDecoration": "none", "color": "black" }}>Productos</Link>
                 </div>
             </div>
         </>
