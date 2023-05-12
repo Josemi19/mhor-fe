@@ -10,9 +10,9 @@ export const Cards = () => {
                 {data.map((item, index) => {
                     return (
                         <div className="col-6" key={index}>
-                            <Link to={'/product'} style={{ "textDecoration": "none", "color": "black" }}>
+                            <Link to={`/product/${item.modelo}`} style={{ "textDecoration": "none", "color": "black" }}>
                                 <div className="card">
-                                    <img src="..." className="card-img-top" alt="..." />
+                                    <img src={item.img} className="card-img-top" alt={`Modelo ${item.modelo}`} />
                                     <div className="card-body">
                                         <h5 className="card-title">{item.modelo}</h5>
                                         <p className="card-text">{item.precio}</p>

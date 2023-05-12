@@ -7,6 +7,8 @@ import { Cards } from "../component/Cards.jsx";
 export const Home = () => (
 	<div className="text-center mt-5">
 		<Carousel/>
-		<Cards/>
+		<div className="container">
+			<Cards/>
+		</div>
 	</div>
 );
