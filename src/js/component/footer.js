@@ -5,9 +5,6 @@ export const Footer = () => (
 	<footer className="footer mt-auto py-3">
 		<div className="container-fluid  d-flex justify-content-between">
 			<div className="flex-column d-flex">
-				<Link to={"/about"} style={{ "textDecoration": "none", "color": "black" }}>
-					<span>Sobre Nosotros</span>
-				</Link>
 				<span>© Mhor Style 2022</span>
 			</div>
 			<div className="d-flex gap-3">

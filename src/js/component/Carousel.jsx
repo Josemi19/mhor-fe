@@ -15,7 +15,7 @@ export const Carousel = () => {
                         <img src={Foto2} className="d-block w-100 foto" alt="..."/>
                     </div>
                     <div className="carousel-item">
-                        <img src="..." className="d-block w-100" alt="..."/>
+                        <img src="" className="d-block w-100" alt="..."/>
                     </div>
                 </div>
             </div>

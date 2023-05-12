@@ -14,7 +14,7 @@ export const Cards = () => {
                                 <div className="card">
                                     <img src={item.img} className="card-img-top" alt={`Modelo ${item.modelo}`} />
                                     <div className="card-body">
-                                        <h5 className="card-title">{item.modelo}</h5>
+                                        <h5 className="card-title">{item.nombre}</h5>
                                         <p className="card-text">{item.precio}</p>
                                     </div>
                                 </div>
