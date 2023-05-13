@@ -6,7 +6,7 @@ import { Context } from "../store/appContext.js";
 export const Navbar = () => {
 	const {store} = useContext(Context)
 	return (
-		<nav className="navbar fixed-top navbar-expand-lg bg-body-tertiary">
+		<nav className="navbar navbar-expand-lg bg-body-tertiary">
 			<div className="container-fluid">
 				<Link to={'/cart'} style={{ "textDecoration": "none", "color": "black" }}>
 					<span>{store.cart.length}</span>
