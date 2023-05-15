@@ -6,7 +6,7 @@ export const OffCanvas = () => {
     return (
         <>
             <button className="btn  d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive">
-                <i className="bi bi-list" style={{"fontSize": "20px"}}></i>
+                <i className="bi bi-list fs-2"></i>
             </button>
 
             <div className="offcanvas-lg offcanvas-end" tabIndex="-1" id="offcanvasResponsive" aria-labelledby="offcanvasResponsiveLabel">

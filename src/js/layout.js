@@ -9,6 +9,7 @@ import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { SingleProduct } from "./views/singleProduct.jsx";
 import { Cart } from "./views/cart.jsx";
+import { Pedido } from "./views/pedido.jsx";
 
 //create your first component
 const Layout = () => {
@@ -25,6 +26,7 @@ const Layout = () => {
 						<Route path="/" element={<Home />} />
 						<Route path="/product/:modelo" element={<SingleProduct/>}/>
 						<Route path="/cart" element={<Cart/>}/>
+						<Route path="/pedido" element={<Pedido/>}/>
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>
 					<Footer />

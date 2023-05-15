@@ -9,10 +9,10 @@ export const Navbar = () => {
 		<nav className="navbar navbar-expand-lg bg-body-tertiary">
 			<div className="container-fluid">
 				<Link to={'/cart'} style={{ "textDecoration": "none", "color": "black" }}>
-					<span>{store.cart.length}</span>
-					<i className="fa-solid fa-bag-shopping mx-2" style={{ "color": "#000000" }}></i>
+					<span className="fs-4">{store.cart.length}</span>
+					<i className="fa-solid fa-bag-shopping mx-2 fs-4" style={{ "color": "#000000" }}></i>
 				</Link>
-				<Link to={"/"} className="navbar-brand">MHOR</Link>
+				<Link to={"/"} className="navbar-brand fs-2">MHOR</Link>
 				<OffCanvas />
 			</div>
 		</nav>

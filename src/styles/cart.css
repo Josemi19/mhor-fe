@@ -1,0 +1,5 @@
+.listaDeCompra{
+    border-top: solid rgba(0, 0, 0, 0.315) 1px;
+    border-bottom: solid rgba(0, 0, 0, 0.315) 1px;
+    border-radius: 5px;
+}
