@@ -15,7 +15,8 @@ export const OffCanvas = () => {
                     <button type="button" className="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive" aria-label="Close"></button>
                 </div>
                 <div className="offcanvas-body">
-                    <Link to={"/productos"} style={{ "textDecoration": "none", "color": "black" }}>Productos</Link>
+                    <Link to={"/all/carteras"} style={{ "textDecoration": "none", "color": "black" }}>Carteras</Link>
+                    <Link to={"/all/prendas"} style={{ "textDecoration": "none", "color": "black" }}>Prendas</Link>
                 </div>
             </div>
         </>

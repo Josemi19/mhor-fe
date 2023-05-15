@@ -1,0 +1,9 @@
+.categoria{
+    text-decoration: overline rgb(163, 163, 163);
+    color: black;
+}
+
+.categoriaBottom{
+    text-decoration: underline rgb(163, 163, 163);
+    color: black;
+}

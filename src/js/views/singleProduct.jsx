@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
-import {topProducts} from "../../data"
+import {topCarteras} from "../../data"
 import { useParams } from 'react-router'
 import { Context } from '../store/appContext'
 
 export const SingleProduct = () => {
     const {store, actions} = useContext(Context)
     const {modelo} = useParams()
-    const cartera = topProducts.find((item) => item.modelo == modelo)
+    const cartera = topCarteras.find((item) => item.modelo == modelo)
     const existe = store.cart.find((item) => item.modelo == modelo)
 
     return (

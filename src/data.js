@@ -3,7 +3,7 @@ import Alanys2 from "./img/models/ALANYS-2.jpg"
 import Silvia1 from "./img/models/SILVIA-1.jpg"
 import Silvia2 from "./img/models/SILVIA-2.jpg"
 
-export const topProducts = [
+export const topCarteras = [
     {
         modelo: "ALANYS3",
         nombre: "ALANYS",
@@ -30,7 +30,7 @@ export const topProducts = [
     },
 ]
 
-export const allProducts = [
+export const allCarteras = [
     {
         modelo: "ALANYS3",
         nombre: "ALANYS",
@@ -49,4 +49,12 @@ export const allProducts = [
         img: Alanys2,
         precio: 45
     },
+]
+
+export const topPrendas = [
+
+]
+
+export const allPrendas = [
+    
 ]
