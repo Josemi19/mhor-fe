@@ -5,13 +5,6 @@ import { Link } from 'react-router-dom'
 
 export const Cart = () => {
     const { store, actions } = useContext(Context)
-    const getTotal = () => {
-        let total = 0
-        for (let cartera of store.cart) {
-            total = total + cartera.precio
-        }
-        return total;
-    }
     return (
         <>
             <div className="container text-center">
@@ -45,7 +38,7 @@ export const Cart = () => {
                         </div>
                         <div className="w-100 d-flex align-items-end mt-2 p-3 flex-column">
                             <div className='fw-bold'>Total:</div>
-                            <div className='fw-semibold'>{`$${getTotal()} USD`}</div>
+                            <div className='fw-semibold'>{`$${actions.getTotal()} USD`}</div>
                             <span>El total no refleja los costos de envio,</span>
                             <span>los mismos dependeran de la zona/ciudad </span>
                             <span>a la que se haga el pedido.</span>

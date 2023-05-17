@@ -14,7 +14,7 @@ export const Cards = ({ categoria }) => {
                         {topCarteras.map((item, index) => {
                             return (
                                 <div className="col-6 col-md-3 my-3" key={index}>
-                                    <Link to={`/product/${item.modelo}`} style={{ "textDecoration": "none", "color": "black" }}>
+                                    <Link to={`/product/${item.modelo}`} className='link'>
                                         <div className="card">
                                             <img src={item.img} className="card-img-top" alt={`Modelo ${item.modelo}`} />
                                             <div className="card-body">
@@ -34,7 +34,7 @@ export const Cards = ({ categoria }) => {
                         {topPrendas?.map((item, index) => {
                             return (
                                 <div className="col-6 col-md-3 my-3" key={index}>
-                                    <Link to={`/product/${item.modelo}`} style={{ "textDecoration": "none", "color": "black" }}>
+                                    <Link to={`/product/${item.modelo}`} className='link'>
                                         <div className="card">
                                             <img src={item.img} className="card-img-top" alt={`Modelo ${item.modelo}`} />
                                             <div className="card-body">

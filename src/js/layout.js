@@ -11,6 +11,8 @@ import { SingleProduct } from "./views/singleProduct.jsx";
 import { Cart } from "./views/cart.jsx";
 import { Pedido } from "./views/pedido.jsx";
 import { AllProducts } from "./views/allProducts.jsx";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 //create your first component
 const Layout = () => {
@@ -22,6 +24,7 @@ const Layout = () => {
 		<div>
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
+					<ToastContainer/>
 					<Navbar />
 					<Routes>
 						<Route path="/" element={<Home />} />

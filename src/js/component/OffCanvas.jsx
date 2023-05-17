@@ -11,12 +11,19 @@ export const OffCanvas = () => {
 
             <div className="offcanvas-lg offcanvas-end" tabIndex="-1" id="offcanvasResponsive" aria-labelledby="offcanvasResponsiveLabel">
                 <div className="offcanvas-header">
-                    <h5 className="offcanvas-title" id="offcanvasResponsiveLabel">Mhor Style</h5>
+                    <h5 className="offcanvas-title fw-semibold" id="offcanvasResponsiveLabel">MHOR STYLE</h5>
                     <button type="button" className="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive" aria-label="Close"></button>
                 </div>
-                <div className="offcanvas-body">
-                    <Link to={"/all/carteras"} style={{ "textDecoration": "none", "color": "black" }}>Carteras</Link>
-                    <Link to={"/all/prendas"} style={{ "textDecoration": "none", "color": "black" }}>Prendas</Link>
+                <div className="offcanvas-body ">
+                    <div className='mx-2 fs-5 py-3'>
+                        <Link to={"/"} className='link offcanvasItem'>INICIO</Link>
+                    </div>
+                    <div className='mx-2 fs-5 py-3'>
+                        <Link to={"/all/carteras"} className='link offcanvasItem'>CARTERAS</Link>
+                    </div>
+                    <div className='mx-2 fs-5 py-3'>
+                        <Link to={"/all/prendas"} className='link offcanvasItem'>PRENDAS</Link>
+                    </div>
                 </div>
             </div>
         </>
