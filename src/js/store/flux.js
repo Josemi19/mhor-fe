@@ -3,7 +3,8 @@ import {toast} from "react-toastify"
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			cart: JSON.parse(localStorage.getItem("cart")) || []
+			cart: JSON.parse(localStorage.getItem("cart")) || [],
+			dolar: null
 		},
 		actions: {
 			addToCart: (cartera) => {
@@ -36,6 +37,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 					total = total + cartera.precio
 				}
 				return total;
+			},
+
+			getDollarPrice: async () => {
+				const response = await fetch("https://venecodollar.vercel.app/api/v1/dollar")
+				const data = await response.json()
+				const store = getStore()
+				setStore({...store, dolar: data.Data.entities[0].info})
 			}
 		}
 	};
