@@ -43,7 +43,7 @@ export const Pedido = () => {
                     pauseOnHover: true,
                     draggable: true,
                     progress: undefined,
-                    theme: "light",
+                    theme: "dark",
                 })
             )
         }
