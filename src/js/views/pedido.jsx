@@ -1,6 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
 import { Accordion } from '../component/Accordion.jsx'
+import { Context } from '../store/appContext.js'
+import "../../styles/accordion.css"
+import { Resumen } from '../component/Resumen.jsx'
 
 const savedInfo = JSON.parse(localStorage.getItem("userInfo"))
 
@@ -16,6 +19,7 @@ const initialValue = {
 export const Pedido = () => {
     const [userData, setUserData] = useState(initialValue)
     const [saveInfo, setSaveInfo] = useState(true)
+    const { actions } = useContext(Context)
 
     const handleChange = (e) => {
         setUserData({ ...userData, [e.target.name]: e.target.value })
@@ -28,9 +32,10 @@ export const Pedido = () => {
     }
 
     const handleShip = () => {
+        // Verifica que ningun input este vacio
         for (let campo in userData) {
             if (userData[campo] == "") return (
-                toast.error(`Todos los campos son requeridos: ${campo}`, {
+                toast.error(`Campo Obligatorio: ${campo}`, {
                     position: "top-right",
                     autoClose: 2000,
                     hideProgressBar: false,
@@ -42,10 +47,28 @@ export const Pedido = () => {
                 })
             )
         }
+        console.log("fuera del for")
     }
 
     return (
         <>
+            <div className="accordion mb-3 mt-1" id="accordionResumen">
+                <div className="accordion-item">
+                    <h6 className="accordion-header">
+                        <button className="accordion-button collapsed accordionButtonResumen" type="button" data-bs-toggle="collapse" data-bs-target="#collapseResumen" aria-expanded="true" aria-controls="collapseOne">
+                            Resumen de Compra
+                        </button>
+                    </h6>
+                    <div id="collapseResumen" className="accordion-collapse collapse" data-bs-parent="#accordionResumen">
+                        <div className="accordion-body">
+                            <div className='border-bottom border-dark-subtle w-100 d-flex justify-content-between'>
+                                Total: <b>{`$${actions.getTotal()} USD`}</b>
+                                </div>
+                            <Resumen/>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div className="container">
                 <form className='my-2'>
                     <label className='form-label fw-semibold'>Contacto</label>
@@ -92,15 +115,15 @@ export const Pedido = () => {
                         onChange={(e) => handleChange(e)}
                     />
                     <input
-                        type="text"
-                        className='form-control mb-2'
+                        type="number"
+                        className='form-control mb-3'
                         placeholder='Codigo Postal'
                         name='codigoPostal'
                         value={userData.codigoPostal}
                         onChange={(e) => handleChange(e)}
                     />
                     <label className='form-label fw-semibold'>Informacion de Pago</label>
-                    <Accordion/>
+                    <Accordion />
                 </form>
                 <div className="form-check form-check-reverse">
                     <input
@@ -119,7 +142,7 @@ export const Pedido = () => {
                     </label>
                 </div>
                 <div className='d-flex justify-content-end mt-2'>
-                    <button className="btn btn-outline-dark" onClick={() => handleShip()}>Confirmar Pedido</button>
+                    <button className="btn btn-dark" onClick={() => handleShip()}>Confirmar Pedido</button>
                 </div>
             </div>
         </>

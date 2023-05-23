@@ -15,13 +15,15 @@ export const SingleProduct = () => {
                 <div>
                     <img className='w-100' src={cartera.img} alt="..." />
                     <h3 className='mt-3'>{cartera.nombre}</h3>
-                    <h5>{`$${cartera.precio} USD`}</h5>
-                    {existe == undefined 
-                    ?
-                        <button className="btn btn-outline-dark" onClick={() => actions.addToCart(cartera)}>Agregar al carrito</button>
-                    :
-                    <button className="btn btn-outline-danger" onClick={() => actions.addToCart(cartera)}>Eliminar del carrito</button>
-                    }
+                    <h6>{`$${cartera.precio} USD`}</h6>
+                    <div className='d-flex justify-content-end'>
+                        {existe == undefined 
+                        ?
+                        <button className="btn btn-dark" onClick={() => actions.addToCart(cartera)}>Agregar al carrito</button>
+                        :
+                        <button className="btn btn-outline-danger" onClick={() => actions.addToCart(cartera)}>Eliminar del carrito</button>
+                        }
+                    </div>
                 </div>
             </div>
         </>
