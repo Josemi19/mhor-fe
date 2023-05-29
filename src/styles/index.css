@@ -8,6 +8,11 @@
 
 body{
     font-family: 'Playfair Display', serif;
+    min-height: 100vh;
+}
+
+#app{
+    min-height: 100vh;
 }
 
 .link{

@@ -1,9 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import { toast } from 'react-toastify'
 import { Accordion } from '../component/Accordion.jsx'
 import { Context } from '../store/appContext.js'
 import "../../styles/accordion.css"
 import { Resumen } from '../component/Resumen.jsx'
+import emailjs from "@emailjs/browser"
+import { useNavigate } from 'react-router'
 
 const savedInfo = JSON.parse(localStorage.getItem("userInfo"))
 
@@ -19,7 +21,9 @@ const initialValue = {
 export const Pedido = () => {
     const [userData, setUserData] = useState(initialValue)
     const [saveInfo, setSaveInfo] = useState(true)
-    const { actions } = useContext(Context)
+    const { actions, store } = useContext(Context)
+    const navigate = useNavigate()
+    const form = useRef()
 
     const handleChange = (e) => {
         setUserData({ ...userData, [e.target.name]: e.target.value })
@@ -31,7 +35,8 @@ export const Pedido = () => {
         localStorage.removeItem("userInfo")
     }
 
-    const handleShip = () => {
+    const handleShip = (e) => {
+        e.preventDefault()
         // Verifica que ningun input este vacio
         for (let campo in userData) {
             if (userData[campo] == "") return (
@@ -47,7 +52,31 @@ export const Pedido = () => {
                 })
             )
         }
-        console.log("fuera del for")
+        // Manda el correo con la informacion de los inputs
+        try {
+            emailjs.sendForm("service_vpdmusd", "template_g03yp9r", form.current, "OxKdVYlOY8kd7CMnr")
+                .then((result) => {
+                    toast.success(`Pedido realizado con exito`, {
+                        position: "top-right",
+                        autoClose: 2500,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "dark",
+                    })
+                    if (result, text == 'OK') {
+                        navigate("/checkout")
+                        setUserData(initialValue)
+                        localStorage.removeItem("cart")
+                    }
+                }, (error) => {
+                    console.error(error.text)
+                })
+        } catch (error) {
+            console.error(error)
+        }
     }
 
     return (
@@ -63,19 +92,21 @@ export const Pedido = () => {
                         <div className="accordion-body">
                             <div className='border-bottom border-dark-subtle w-100 d-flex justify-content-between'>
                                 Total: <b>{`$${actions.getTotal()} USD`}</b>
-                                </div>
-                            <Resumen/>
+                            </div>
+                            <Resumen />
                         </div>
                     </div>
                 </div>
             </div>
             <div className="container">
-                <form className='my-2'>
+                <form className='my-2' ref={form}>
+                    <input type="text" value={store.cart.map((item) => { return item.nombre })} readOnly style={{ display: "none" }} name='carteras' />
+                    <input type="text" value={store.cart.map((item) => { return item.img })} readOnly style={{ display: "none" }} name='fotos' />
                     <label className='form-label fw-semibold'>Contacto</label>
                     <input
-                        type="text"
+                        type="email"
                         className='form-control mb-3'
-                        placeholder='Correo electronico o numero de telefono'
+                        placeholder='Correo electronico'
                         name='contacto'
                         value={userData.contacto}
                         onChange={(e) => handleChange(e)}
@@ -142,7 +173,7 @@ export const Pedido = () => {
                     </label>
                 </div>
                 <div className='d-flex justify-content-end mt-2'>
-                    <button className="btn btn-dark" onClick={() => handleShip()}>Confirmar Pedido</button>
+                    <button className="btn btn-dark" type='submit' onClick={(e) => handleShip(e)}>Confirmar Pedido</button>
                 </div>
             </div>
         </>
