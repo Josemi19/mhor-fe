@@ -8,7 +8,8 @@ export const Home = () => (
 	<div className="text-center mt-5">
 		<Carousel/>
 		<div className="container">
-			<Cards/>
+			<Cards categoria={"carteras"}/>
+			<Cards categoria={"prendas"}/>
 		</div>
 	</div>
 );

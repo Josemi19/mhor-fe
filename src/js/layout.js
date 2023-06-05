@@ -9,6 +9,11 @@ import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { SingleProduct } from "./views/singleProduct.jsx";
 import { Cart } from "./views/cart.jsx";
+import { Pedido } from "./views/pedido.jsx";
+import { AllProducts } from "./views/allProducts.jsx";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import { Checkout } from "./views/checkout.jsx";
 
 //create your first component
 const Layout = () => {
@@ -17,20 +22,22 @@ const Layout = () => {
 	const basename = process.env.BASENAME || "";
 
 	return (
-		<div>
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
+					<ToastContainer/>
 					<Navbar />
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/product/:modelo" element={<SingleProduct/>}/>
 						<Route path="/cart" element={<Cart/>}/>
+						<Route path="/pedido" element={<Pedido/>}/>
+						<Route path="/all/:categoria" element={<AllProducts/>}/>
+						<Route path="checkout" element={<Checkout/>}/>
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>
 					<Footer />
 				</ScrollToTop>
 			</BrowserRouter>
-		</div>
 	);
 };
 
