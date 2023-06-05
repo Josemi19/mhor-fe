@@ -15,10 +15,10 @@ export const Cart = () => {
                     :
                     <div>
                         <h6>Resumen de compra</h6>
-                        <div className='listaDeCompra'>
+                        <div className='listaDeCompra row'>
                             {store.cart.map((item, index) => {
                                 return (
-                                    <div key={`${item.modelo}${index}`} className='container'>
+                                    <div key={`${item.modelo}${index}`} className='container col-12 col-md-4'>
                                         <div className='row p-3 my-3'>
                                             <img src={item.img} alt={`Modelo ${item.modelo}`} className='col-4' />
                                             <div className='col-4'>

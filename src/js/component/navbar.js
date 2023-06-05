@@ -12,7 +12,7 @@ export const Navbar = () => {
 					<span className="fs-4">{store.cart.length}</span>
 					<i className="fa-solid fa-bag-shopping mx-2 fs-4" style={{ "color": "#000000" }}></i>
 				</Link>
-				<Link to={"/"} className="navbar-brand fs-2" style={{"marginRight": "0"}}>MHOR</Link>
+				<Link to={"/"} className="navbar-brand fs-2" style={{"marginRight": "0"}}>MHÓR</Link>
 				<OffCanvas />
 			</div>
 		</nav>

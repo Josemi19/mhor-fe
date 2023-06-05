@@ -8,7 +8,8 @@ export const topCarteras = [
         modelo: "ALANYS3",
         nombre: "ALANYS",
         img: Alanys3,
-        precio: 45
+        precio: 45, 
+        material: "Cuero"
     },
     {
         modelo: "SILVIA1",
