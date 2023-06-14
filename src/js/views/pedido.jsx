@@ -56,9 +56,9 @@ export const Pedido = () => {
         // Manda el correo con la informacion de los inputs
         try {
             // Envia el correo al cliente
-            emailjs.sendForm("service_vpdmusd", "template_uge4tbf", form.current, "OxKdVYlOY8kd7CMnr")
+            emailjs.sendForm(process.env.SERVICE_ID, process.env.CLIENT_TEMPLATE, form.current, process.env.PUBLIC_KEY)
             // Envia el correo al admin
-            emailjs.sendForm("service_vpdmusd", "template_g03yp9r", form.current, "OxKdVYlOY8kd7CMnr")
+            emailjs.sendForm(process.env.SERVICE_ID, process.env.ADMIN_TEMPLATE, form.current, process.env.PUBLIC_KEY)
                 .then((result) => {
                     if (result.text == 'OK') {
                         toast.success(`Pedido realizado con exito`, {
