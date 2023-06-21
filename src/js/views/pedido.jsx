@@ -10,7 +10,8 @@ import { useNavigate } from 'react-router'
 const savedInfo = JSON.parse(localStorage.getItem("userInfo"))
 
 const initialValue = {
-    contacto: savedInfo?.contacto || "",
+    correo: savedInfo?.correo || "",
+    numero: savedInfo?.numero || "",
     nombre: savedInfo?.nombre || "",
     direccion: savedInfo?.direccion || "",
     estado: savedInfo?.estado || "",
@@ -54,19 +55,22 @@ export const Pedido = () => {
         }
         // Manda el correo con la informacion de los inputs
         try {
-            emailjs.sendForm("service_vpdmusd", "template_g03yp9r", form.current, "OxKdVYlOY8kd7CMnr")
+            // Envia el correo al cliente
+            emailjs.sendForm(process.env.SERVICE_ID, process.env.CLIENT_TEMPLATE, form.current, process.env.PUBLIC_KEY)
+            // Envia el correo al admin
+            emailjs.sendForm(process.env.SERVICE_ID, process.env.ADMIN_TEMPLATE, form.current, process.env.PUBLIC_KEY)
                 .then((result) => {
-                    toast.success(`Pedido realizado con exito`, {
-                        position: "top-right",
-                        autoClose: 2500,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "dark",
-                    })
-                    if (result, text == 'OK') {
+                    if (result.text == 'OK') {
+                        toast.success(`Pedido realizado con exito`, {
+                            position: "top-right",
+                            autoClose: 2500,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "dark",
+                        })
                         navigate("/checkout")
                         setUserData(initialValue)
                         localStorage.removeItem("cart")
@@ -100,15 +104,26 @@ export const Pedido = () => {
             </div>
             <div className="container">
                 <form className='my-2' ref={form}>
-                    <input type="text" value={store.cart.map((item) => { return item.nombre })} readOnly style={{ display: "none" }} name='carteras' />
+
+                    <input type="text" value={store.cart.map((item) => { return item.nombre })} readOnly style={{ display: "none" }} name='productos' />
                     <input type="text" value={store.cart.map((item) => { return item.img })} readOnly style={{ display: "none" }} name='fotos' />
+                    <input type="text" value={actions.getTotal()} readOnly style={{ display: "none" }} name='total' />
+
                     <label className='form-label fw-semibold'>Contacto</label>
                     <input
                         type="email"
                         className='form-control mb-3'
                         placeholder='Correo electronico'
-                        name='contacto'
-                        value={userData.contacto}
+                        name='correo'
+                        value={userData.correo}
+                        onChange={(e) => handleChange(e)}
+                    />
+                    <input
+                        type="text"
+                        className='form-control mb-3'
+                        placeholder='Numero de Telefono'
+                        name='numero'
+                        value={userData.numero}
                         onChange={(e) => handleChange(e)}
                     />
                     <label className='form-label fw-semibold'>Nombre</label>

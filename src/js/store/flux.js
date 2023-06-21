@@ -7,11 +7,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 			dolar: null
 		},
 		actions: {
-			addToCart: (cartera) => {
+			addToCart: (product) => {
 				const store = getStore()
-				let exist = store.cart.find((item) => item.modelo == cartera.modelo)
+				let exist = store.cart.find((item) => item.modelo == product.modelo)
 				if(exist == undefined){
-					let newCart = [...store.cart, cartera]
+					let newCart = [...store.cart, product]
 					setStore({...store, cart: newCart})
 					localStorage.setItem("cart", JSON.stringify(newCart) )
 					toast.success("Agregado con exito", {
@@ -25,7 +25,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						theme: "dark",
 						});
 				}else{
-					let newCart = store.cart.filter((item) => item.modelo != cartera.modelo)
+					let newCart = store.cart.filter((item) => item.modelo != product.modelo)
 					setStore({...store, cart: newCart})
 					localStorage.setItem("cart", JSON.stringify(newCart))
 				}

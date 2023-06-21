@@ -15,7 +15,7 @@ export const Cart = () => {
                     :
                     <div>
                         <h6>Resumen de compra</h6>
-                        <div className='listaDeCompra row'>
+                        <div className='listaDeCompra row bg-light'>
                             {store.cart.map((item, index) => {
                                 return (
                                     <div key={`${item.modelo}${index}`} className='container col-12 col-md-4'>

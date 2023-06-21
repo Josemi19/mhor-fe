@@ -25,3 +25,8 @@ body{
     background-color: black;
     border-color: black;
 }
+@media only screen and (min-width: 990px) {
+    .social-media{
+        display: none !important;
+    }
+}

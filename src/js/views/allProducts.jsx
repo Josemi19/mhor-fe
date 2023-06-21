@@ -16,7 +16,7 @@ export const AllProducts = () => {
                             {allCarteras.map((cartera, index) => {
                                 return (
                                     <div className="col-6 col-md-3 my-3" key={index}>
-                                        <Link to={`/product/${cartera.modelo}`} className='link'>
+                                        <Link to={`/cartera/${cartera.modelo}`} className='link'>
                                             <div className="card">
                                                 <img src={cartera.img} className="card-img-top" alt={`Modelo ${cartera.modelo}`} />
                                                 <div className="card-body">
@@ -37,7 +37,7 @@ export const AllProducts = () => {
                             {allPrendas.map((prenda, index) => {
                                 return (
                                     <div className="col-6 col-md-3 my-3" key={index}>
-                                        <Link to={`/product/${prenda.modelo}`} className='link'>
+                                        <Link to={`/prenda/${prenda.modelo}`} className='link'>
                                             <div className="card">
                                                 <img src={prenda.img} className="card-img-top" alt={`Modelo ${prenda.modelo}`} />
                                                 <div className="card-body">
