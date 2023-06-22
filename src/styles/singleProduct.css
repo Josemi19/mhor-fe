@@ -1,0 +1,29 @@
+@media (min-width: 500px) {
+    .container-single{
+        display: flex;
+        justify-content: center;
+    }
+
+    .container-foto{
+        max-height: 600px;
+        max-width: 1000px;
+        display: flex;
+    }
+
+    .foto-single{
+        max-height: 600px;
+        max-width: 400px;
+    }
+
+    .caption-single{
+    width: 100%;
+    display: block !important;
+    }
+
+    .button-single{
+        align-items: end;
+    }
+    .button-single > button{
+        width: 200px;
+    }
+}
