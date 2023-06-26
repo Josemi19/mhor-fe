@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "../../styles/offCanvas.css"
 import { Link } from 'react-router-dom'
+import { Context } from '../store/appContext'
 
 export const OffCanvas = () => {
+    const { store } = useContext(Context)
     return (
         <>
             <button className="btn  d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive">

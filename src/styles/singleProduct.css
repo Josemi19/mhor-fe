@@ -1,7 +1,8 @@
-@media (min-width: 500px) {
+@media (min-width: 765px) {
     .container-single{
         display: flex;
         justify-content: center;
+        height: 85vh;
     }
 
     .container-foto{
@@ -23,6 +24,7 @@
     .button-single{
         align-items: end;
     }
+
     .button-single > button{
         width: 200px;
     }

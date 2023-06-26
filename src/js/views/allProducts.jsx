@@ -2,6 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router'
 import { allCarteras, allPrendas } from '../../data'
 import { Link } from 'react-router-dom'
+import { ItemCar } from '../component/itemCar.jsx'
 
 export const AllProducts = () => {
     const { categoria } = useParams()
@@ -29,6 +30,7 @@ export const AllProducts = () => {
                                 )
                             })}
                         </div>
+                        <ItemCar />
                     </div>
                     :
                     <div className="container text-center">
@@ -50,6 +52,7 @@ export const AllProducts = () => {
                                 )
                             })}
                         </div>
+                        <ItemCar />
                     </div>
             }
         </>
