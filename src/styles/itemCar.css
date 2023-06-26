@@ -1,0 +1,18 @@
+.item-car{
+    position: fixed;
+    top: 650px;
+    right: 20px;
+    background-color: black;
+    height: 70px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+
+@media(max-width: 440px) {
+    .item-car{
+        top: 745px;
+    }
+}
