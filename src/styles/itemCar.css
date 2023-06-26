@@ -3,6 +3,7 @@
     top: 650px;
     right: 20px;
     background-color: black;
+    opacity: 0.5;
     height: 70px;
     width: 70px;
     display: flex;
@@ -11,8 +12,13 @@
     border-radius: 50px;
 }
 
+.item-car:hover{
+    opacity: 1.0;
+}
+
 @media(max-width: 440px) {
     .item-car{
-        top: 745px;
+        top: 650px;
+        opacity: 0.7;
     }
 }

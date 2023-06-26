@@ -3,7 +3,6 @@ import { allCarteras, allPrendas } from "../../data"
 import { useParams } from 'react-router'
 import { Context } from '../store/appContext'
 import "../../styles/singleProduct.css"
-import { ItemCar } from '../component/itemCar.jsx'
 
 export const SingleProduct = () => {
     const { store, actions } = useContext(Context)
@@ -39,7 +38,6 @@ export const SingleProduct = () => {
                                 </div>
                             </div>
                         </div>
-                        <ItemCar />
                     </div>
                     :
                     <div className="container mt-3 container-single" style={{ "height": "85vh" }}>
@@ -62,7 +60,6 @@ export const SingleProduct = () => {
                                 }
                             </div>
                         </div>
-                        <ItemCar />
                     </div>
             }
 
