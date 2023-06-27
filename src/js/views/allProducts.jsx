@@ -3,6 +3,7 @@ import { useParams } from 'react-router'
 import { allCarteras, allPrendas } from '../../data'
 import { Link } from 'react-router-dom'
 import { ItemCar } from '../component/itemCar.jsx'
+import "../../styles/cards.css"
 
 export const AllProducts = () => {
     const { categoria } = useParams()
@@ -12,7 +13,7 @@ export const AllProducts = () => {
                 categoria == "carteras"
                     ?
                     <div className="container text-center">
-                        <div className='fs-3'>{categoria.charAt(0).toUpperCase() + categoria.slice(1)}</div>
+                        <div className='fs-3 categoriaBottom mt-3'>{categoria.charAt(0).toUpperCase() + categoria.slice(1)}</div>
                         <div className="row">
                             {allCarteras.map((cartera, index) => {
                                 return (
@@ -21,8 +22,8 @@ export const AllProducts = () => {
                                             <div className="card">
                                                 <img src={cartera.img} className="card-img-top" alt={`Modelo ${cartera.modelo}`} />
                                                 <div className="card-body">
-                                                    <h5 className="card-title fw-semibold">{cartera.nombre}</h5>
-                                                    <p className="card-text fw-semibold">{`$${cartera.precio} USD`}</p>
+                                                    <h5 className="card-title item-nombre">{cartera.nombre}</h5>
+                                                    <p className="card-text item-precio">{`$${cartera.precio} USD`}</p>
                                                 </div>
                                             </div>
                                         </Link>
@@ -34,7 +35,7 @@ export const AllProducts = () => {
                     </div>
                     :
                     <div className="container text-center">
-                        <div className='fs-3'>{categoria.charAt(0).toUpperCase() + categoria.slice(1)}</div>
+                        <div className='fs-3 categoriaBottom mt-3'>{categoria.charAt(0).toUpperCase() + categoria.slice(1)}</div>
                         <div className="row">
                             {allPrendas.map((prenda, index) => {
                                 return (
@@ -43,8 +44,8 @@ export const AllProducts = () => {
                                             <div className="card">
                                                 <img src={prenda.img} className="card-img-top" alt={`Modelo ${prenda.modelo}`} />
                                                 <div className="card-body">
-                                                    <h5 className="card-title fw-semibold">{prenda.nombre}</h5>
-                                                    <p className="card-text fw-semibold">{`$${prenda.precio} USD`}</p>
+                                                    <h5 className="card-title item-nombre">{prenda.nombre}</h5>
+                                                    <p className="card-text item-precio">{`$${prenda.precio} USD`}</p>
                                                 </div>
                                             </div>
                                         </Link>

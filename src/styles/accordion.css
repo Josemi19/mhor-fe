@@ -13,5 +13,11 @@
 }
 
 .accordionButtonResumen{
-    font-size: small;
+    font-size: 0.9rem;
+}
+
+@media(min-width: 440px) {
+    .accordionButtonResumen{
+        font-size: 1.25rem;
+    }
 }
