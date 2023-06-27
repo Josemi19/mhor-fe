@@ -94,7 +94,7 @@ export const Pedido = () => {
                     </h6>
                     <div id="collapseResumen" className="accordion-collapse collapse" data-bs-parent="#accordionResumen">
                         <div className="accordion-body">
-                            <div className='border-bottom border-dark-subtle w-100 d-flex justify-content-between'>
+                            <div className='border-bottom border-dark-subtle w-100 d-flex justify-content-between fs-5'>
                                 Total: <b>{`$${actions.getTotal()} USD`}</b>
                             </div>
                             <Resumen />

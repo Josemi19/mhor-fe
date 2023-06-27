@@ -22,12 +22,12 @@ export const Cart = () => {
                                         <div className='row p-3 my-3'>
                                             <img src={item.img} alt={`Modelo ${item.modelo}`} className='col-4' />
                                             <div className='col-4'>
-                                                <p className='fw-semibold'>
+                                                <p className='fw-semibold fs-5'>
                                                     {item.nombre}
                                                 </p>
                                             </div>
                                             <div className="col-4">
-                                                <div className='fw-semibold'>{`$${item.precio} USD`}</div>
+                                                <div className='fw-semibold fs-5'>{`$${item.precio} USD`}</div>
                                                 <div className="mt-5" onClick={() => actions.addToCart(item)}>Eliminar</div>
                                             </div>
                                         </div>
@@ -38,7 +38,7 @@ export const Cart = () => {
                         </div>
                         <div className="w-100 d-flex align-items-end mt-2 p-3 flex-column">
                             <div className='fw-bold'>Total:</div>
-                            <div className='fw-semibold'>{`$${actions.getTotal()} USD`}</div>
+                            <div className='fw-semibold fs-5'>{`$${actions.getTotal()} USD`}</div>
                             <span>El total no refleja los costos de envio,</span>
                             <span>los mismos dependeran de la zona/ciudad </span>
                             <span>a la que se haga el pedido.</span>

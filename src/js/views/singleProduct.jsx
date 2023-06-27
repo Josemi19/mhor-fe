@@ -17,15 +17,15 @@ export const SingleProduct = () => {
                 product == "cartera"
                     ?
                     <div className="container mt-3 container-single" style={{ "height": "85vh" }}>
-                        <div className='border border-dark bg-light container-foto'>
+                        <div className='card container-foto'>
                             <img className='w-100 foto-single' src={cartera.img} alt="..." />
                             <div className='d-flex flex-column justify-content-between'>
                                 <div className='d-flex justify-content-between p-3 caption-single'>
                                     <div>
-                                        <h3>{cartera.nombre}</h3>
-                                        <h6>{`Material: ${cartera.material}`}</h6>
+                                        <p className='card-title'>{cartera.nombre}</p>
+                                        <p className='card-text'>{`Material: ${cartera.material}`}</p>
                                     </div>
-                                    <h6>{`$${cartera.precio} USD`}</h6>
+                                    <p className='card-text'>{`$${cartera.precio} USD`}</p>
                                 </div>
 
                                 <div className='d-flex justify-content-end mb-2 p-3 button-single'>

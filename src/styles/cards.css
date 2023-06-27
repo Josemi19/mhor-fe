@@ -1,9 +1,20 @@
 .categoria{
     text-decoration: overline rgb(163, 163, 163);
     color: black;
+    font-size: large;
 }
 
 .categoriaBottom{
     text-decoration: underline rgb(163, 163, 163);
     color: black;
+}
+
+.card-title{
+    font-weight: 900;
+    font-size: xx-large;
+}
+
+.card-text{
+    font-weight: 500;
+    font-size: large;
 }
