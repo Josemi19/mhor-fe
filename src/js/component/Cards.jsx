@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { topCarteras, topPrendas } from "../../data"
 import "../../styles/cards.css"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Context } from '../store/appContext';
 
 AOS.init();
 
 export const Cards = ({ categoria }) => {
+    const {store} = useContext(Context)
     return (
         <>
             {
@@ -15,15 +16,15 @@ export const Cards = ({ categoria }) => {
                     ?
                     <div className="row">
                         <Link to={`/all/${categoria}`} className='mt-4 categoria fs-1'>Carteras</Link>
-                        {topCarteras.map((item, index) => {
+                        {store.carteras.map((item, index) => {
                             return (
-                                <div className="col-6 col-md-3 my-3" key={index} data-aos="fade-right">
-                                    <Link to={`/cartera/${item.modelo}`} className='link'>
+                                <div className={`col-6 col-md-3 my-3 ${index > 3 && "d-none"}`} key={index} data-aos="fade-right">
+                                    <Link to={`/cartera/${item.id}`} className='link'>
                                         <div className="card">
-                                            <img src={item.img} className="card-img-top" alt={`Modelo ${item.modelo}`} />
+                                            <img src={item.attributes.img.data[0].attributes.url} className="card-img-top" alt={`Modelo ${item.attributes.modelo}`} />
                                             <div className="card-body">
-                                                <p className="card-title">{item.nombre}</p>
-                                                <p className="card-text">{`$${item.precio} USD`}</p>
+                                                <p className="card-title">{item.attributes.nombre}</p>
+                                                <p className="card-text">{`$${item.attributes.precio} USD`}</p>
                                             </div>
                                         </div>
                                     </Link>
@@ -35,15 +36,15 @@ export const Cards = ({ categoria }) => {
                     :
                     <div className="row">
                         <Link to={`/all/${categoria}`} className='mt-4 categoria fs-1'>Prendas</Link>
-                        {topPrendas?.map((item, index) => {
+                        {store.prendas.map((item, index) => {
                             return (
                                 <div className="col-6 col-md-3 my-3" key={index} data-aos="fade-right">
-                                    <Link to={`/prenda/${item.modelo}`} className='link'>
+                                    <Link to={`/prenda/${item.id}`} className='link'>
                                         <div className="card">
-                                            <img src={item.img} className="card-img-top" alt={`Modelo ${item.modelo}`} />
+                                            <img src={item.attributes.img.data[0].attributes.url} className="card-img-top" alt={`Modelo ${item.attributes.modelo}`} />
                                             <div className="card-body">
-                                                <h5 className="card-title item-nombre">{item.nombre}</h5>
-                                                <p className="card-text item-precio">{`$${item.precio} USD`}</p>
+                                                <h5 className="card-title item-nombre">{item.attributes.nombre}</h5>
+                                                <p className="card-text item-precio">{`$${item.attributes.precio} USD`}</p>
                                             </div>
                                         </div>
                                     </Link>

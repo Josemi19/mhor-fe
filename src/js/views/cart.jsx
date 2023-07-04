@@ -18,16 +18,16 @@ export const Cart = () => {
                         <div className='listaDeCompra row bg-light'>
                             {store.cart.map((item, index) => {
                                 return (
-                                    <div key={`${item.modelo}${index}`} className='container col-12 col-md-4'>
+                                    <div key={`${item.attributes.modelo}${index}`} className='container col-12 col-md-4'>
                                         <div className='row p-3 my-3'>
-                                            <img src={item.img} alt={`Modelo ${item.modelo}`} className='col-4' />
+                                            <img src={item.attributes.img.data[0].attributes.url} alt={`Modelo ${item.attributes.modelo}`} className='col-4' />
                                             <div className='col-4'>
                                                 <p className='fw-semibold fs-5'>
-                                                    {item.nombre}
+                                                    {item.attributes.nombre}
                                                 </p>
                                             </div>
                                             <div className="col-4">
-                                                <div className='fw-semibold fs-5'>{`$${item.precio} USD`}</div>
+                                                <div className='fw-semibold fs-5'>{`$${item.attributes.precio} USD`}</div>
                                                 <div className="mt-5" onClick={() => actions.addToCart(item)}>Eliminar</div>
                                             </div>
                                         </div>
