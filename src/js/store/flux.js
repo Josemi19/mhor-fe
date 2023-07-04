@@ -4,12 +4,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			cart: JSON.parse(localStorage.getItem("cart")) || [],
-			dolar: null
+			dolar: null,
+			carteras:[],
+			prendas:[]
 		},
 		actions: {
 			addToCart: (product) => {
 				const store = getStore()
-				let exist = store.cart.find((item) => item.modelo == product.modelo)
+				let exist = store.cart.find((item) => item.id == product.id)
 				if(exist == undefined){
 					let newCart = [...store.cart, product]
 					setStore({...store, cart: newCart})
@@ -25,7 +27,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						theme: "dark",
 						});
 				}else{
-					let newCart = store.cart.filter((item) => item.modelo != product.modelo)
+					let newCart = store.cart.filter((item) => item.id != product.id)
 					setStore({...store, cart: newCart})
 					localStorage.setItem("cart", JSON.stringify(newCart))
 				}
@@ -33,8 +35,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getTotal: () => {
 				const store = getStore()
 				let total = 0
-				for (let cartera of store.cart) {
-					total = total + cartera.precio
+				for (let product of store.cart) {
+					total = total + product.attributes.precio
 				}
 				return total;
 			},
@@ -44,6 +46,29 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const data = await response.json()
 				const store = getStore()
 				setStore({...store, dolar: data.Data.entities[0].info})
+			},
+
+			getCarteras: async () => {
+				const store = getStore()
+				const response = await fetch(`${process.env.BACKEND_URL}/carteras?populate=*`, {
+					method: 'GET',
+					headers:{
+						"Authorization": `Bearer ${process.env.API_KEY}`
+					}
+				})
+				const data = await response.json()
+				setStore({...store, carteras: data.data})
+			},
+			getPrendas: async () => {
+				const store = getStore()
+				const response = await fetch(`${process.env.BACKEND_URL}/prendas?populate=*`, {
+					method: 'GET',
+					headers:{
+						"Authorization": `Bearer ${process.env.API_KEY}`
+					}
+				})
+				const data = await response.json()
+				setStore({...store, carteras: data.data})
 			}
 		}
 	};

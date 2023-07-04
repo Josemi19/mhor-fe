@@ -1,16 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useParams } from 'react-router'
-import { allCarteras, allPrendas } from '../../data'
 import { Link } from 'react-router-dom'
 import { ItemCar } from '../component/itemCar.jsx'
 import "../../styles/cards.css"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Context } from '../store/appContext'
 
 AOS.init();
 
 export const AllProducts = () => {
     const { categoria } = useParams()
+    const {store} = useContext(Context)
     return (
         <>
             {
@@ -19,15 +20,15 @@ export const AllProducts = () => {
                     <div className="container text-center">
                         <div className='fs-3 categoriaBottom mt-3'>{categoria.charAt(0).toUpperCase() + categoria.slice(1)}</div>
                         <div className="row">
-                            {allCarteras.map((cartera, index) => {
+                            {store.carteras.map((cartera, index) => {
                                 return (
                                     <div className="col-6 col-md-3 my-3" key={index} data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}>
-                                        <Link to={`/cartera/${cartera.modelo}`} className='link'>
+                                        <Link to={`/cartera/${cartera.id}`} className='link'>
                                             <div className="card">
-                                                <img src={cartera.img} className="card-img-top" alt={`Modelo ${cartera.modelo}`} />
+                                                <img src={cartera.attributes.img.data[0].attributes.url} className="card-img-top" alt={`Modelo ${cartera.attributes.modelo}`} />
                                                 <div className="card-body">
-                                                    <h5 className="card-title item-nombre">{cartera.nombre}</h5>
-                                                    <p className="card-text item-precio">{`$${cartera.precio} USD`}</p>
+                                                    <h5 className="card-title item-nombre">{cartera.attributes.nombre}</h5>
+                                                    <p className="card-text item-precio">{`$${cartera.attributes.precio} USD`}</p>
                                                 </div>
                                             </div>
                                         </Link>
@@ -41,15 +42,15 @@ export const AllProducts = () => {
                     <div className="container text-center">
                         <div className='fs-3 categoriaBottom mt-3'>{categoria.charAt(0).toUpperCase() + categoria.slice(1)}</div>
                         <div className="row">
-                            {allPrendas.map((prenda, index) => {
+                            {store.prendas.map((prenda, index) => {
                                 return (
                                     <div className="col-6 col-md-3 my-3" key={index} data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}>
-                                        <Link to={`/prenda/${prenda.modelo}`} className='link'>
+                                        <Link to={`/prenda/${prenda.id}`} className='link'>
                                             <div className="card">
-                                                <img src={prenda.img} className="card-img-top" alt={`Modelo ${prenda.modelo}`} />
+                                                <img src={prenda.attributes.img.data[0].attributes.url} className="card-img-top" alt={`Modelo ${prenda.attributes.modelo}`} />
                                                 <div className="card-body">
-                                                    <h5 className="card-title item-nombre">{prenda.nombre}</h5>
-                                                    <p className="card-text item-precio">{`$${prenda.precio} USD`}</p>
+                                                    <h5 className="card-title item-nombre">{prenda.attributes.nombre}</h5>
+                                                    <p className="card-text item-precio">{`$${prenda.attributes.precio} USD`}</p>
                                                 </div>
                                             </div>
                                         </Link>
