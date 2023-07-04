@@ -9,7 +9,7 @@ export const SingleProduct = () => {
     const { id, product } = useParams()
     const cartera = store.carteras.find((item) => item.id == id) // busca la cartera en data
     const prenda = store.prendas.find((item) => item.id == id) // busca la prenda en data
-    const existe = store.cart.find((item) => item.id == id) // busca si el producto esta en el carrito
+    const existe = actions.addToCart() // busca si el producto esta en el carrito
     return (
         <>
             {

@@ -11,7 +11,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		actions: {
 			addToCart: (product) => {
 				const store = getStore()
-				let exist = store.cart.find((item) => item.id == product.id)
+				let exist = store.cart.find((item) => item.id == product.id && item.nombre == product.nombre)
 				if(exist == undefined){
 					let newCart = [...store.cart, product]
 					setStore({...store, cart: newCart})
@@ -27,10 +27,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 						theme: "dark",
 						});
 				}else{
-					let newCart = store.cart.filter((item) => item.id != product.id)
+					let newCart = store.cart.filter((item) => item.id != product.id && item.nombre != product.nombre)
 					setStore({...store, cart: newCart})
 					localStorage.setItem("cart", JSON.stringify(newCart))
 				}
+				return exist;
 			},
 			getTotal: () => {
 				const store = getStore()
