@@ -7,8 +7,9 @@ export const SingleProduct = () => {
     const { store, actions } = useContext(Context)
 
     const { id, product } = useParams()
-    const cartera = store.carteras.find((item) => item?.id == id) // busca la cartera en data
-    const prenda = store.prendas.find((item) => item?.id == id) // busca la prenda en data
+    const cartera = store.carteras.find((item) => item?.id == id) // busca la cartera
+    const prenda = store.prendas.find((item) => item?.id == id) // busca la prenda
+
     return (
         <>
             {
@@ -27,7 +28,7 @@ export const SingleProduct = () => {
                                 </div>
 
                                 <div className='d-flex justify-content-end mb-2 p-3 button-single'>
-                                    {actions.addToCart(cartera) == undefined
+                                    {actions.existeProducto(cartera) == undefined
                                         ?
                                         <button className="btn btn-dark" onClick={() => actions.addToCart(cartera)}>Agregar al carrito</button>
                                         :
@@ -50,7 +51,7 @@ export const SingleProduct = () => {
                             </div>
 
                             <div className='d-flex justify-content-end mb-2 p-3 button-single'>
-                                {actions.addToCart(prenda) == undefined
+                                {actions.existeProducto(prenda) == undefined
                                     ?
                                     <button className="btn btn-dark" onClick={() => actions.addToCart(prenda)}>Agregar al carrito</button>
                                     :

@@ -11,7 +11,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		actions: {
 			addToCart: (product) => {
 				const store = getStore()
-				let exist = store.cart.find((item) => item.id == product.id && item.nombre == product.nombre)
+				let exist = store.cart.find((item) => (item.id == product.id && item.attributes.nombre == product.attributes.nombre))
 				if(exist == undefined){
 					let newCart = [...store.cart, product]
 					setStore({...store, cart: newCart})
@@ -27,11 +27,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 						theme: "dark",
 						});
 				}else{
-					let newCart = store.cart.filter((item) => item.id != product.id && item.nombre != product.nombre)
+					let newCart = store.cart.filter((item) => item.id != product.id && item.attributes.nombre != product.attributes.nombre)
 					setStore({...store, cart: newCart})
 					localStorage.setItem("cart", JSON.stringify(newCart))
 				}
-				return exist;
 			},
 			getTotal: () => {
 				const store = getStore()
@@ -70,6 +69,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 				})
 				const data = await response.json()
 				setStore({...store, carteras: data.data})
+			},
+			existeProducto: (product) => {
+				const store = getStore()
+				let existe = store.cart.find((item) => item.id == product.id && item.attributes.nombre == product.attributes.nombre)
+				return existe
 			}
 		}
 	};
