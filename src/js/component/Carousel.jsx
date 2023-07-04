@@ -43,7 +43,7 @@ export class Carousel extends Component {
         };
 
         return (
-            <div className="container-fluid">
+            <div className="container">
                 <Slider {...settings}>
                     {pictures.map((pic, index) => {
                         return (

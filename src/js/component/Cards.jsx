@@ -2,6 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { topCarteras, topPrendas } from "../../data"
 import "../../styles/cards.css"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+AOS.init();
 
 export const Cards = ({ categoria }) => {
     return (
@@ -13,7 +17,7 @@ export const Cards = ({ categoria }) => {
                         <Link to={`/all/${categoria}`} className='mt-4 categoria fs-1'>Carteras</Link>
                         {topCarteras.map((item, index) => {
                             return (
-                                <div className="col-6 col-md-3 my-3" key={index}>
+                                <div className="col-6 col-md-3 my-3" key={index} data-aos="fade-right">
                                     <Link to={`/cartera/${item.modelo}`} className='link'>
                                         <div className="card">
                                             <img src={item.img} className="card-img-top" alt={`Modelo ${item.modelo}`} />
@@ -33,7 +37,7 @@ export const Cards = ({ categoria }) => {
                         <Link to={`/all/${categoria}`} className='mt-4 categoria fs-1'>Prendas</Link>
                         {topPrendas?.map((item, index) => {
                             return (
-                                <div className="col-6 col-md-3 my-3" key={index}>
+                                <div className="col-6 col-md-3 my-3" key={index} data-aos="fade-right">
                                     <Link to={`/prenda/${item.modelo}`} className='link'>
                                         <div className="card">
                                             <img src={item.img} className="card-img-top" alt={`Modelo ${item.modelo}`} />

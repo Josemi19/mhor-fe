@@ -4,6 +4,10 @@ import { allCarteras, allPrendas } from '../../data'
 import { Link } from 'react-router-dom'
 import { ItemCar } from '../component/itemCar.jsx'
 import "../../styles/cards.css"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+AOS.init();
 
 export const AllProducts = () => {
     const { categoria } = useParams()
@@ -17,7 +21,7 @@ export const AllProducts = () => {
                         <div className="row">
                             {allCarteras.map((cartera, index) => {
                                 return (
-                                    <div className="col-6 col-md-3 my-3" key={index}>
+                                    <div className="col-6 col-md-3 my-3" key={index} data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}>
                                         <Link to={`/cartera/${cartera.modelo}`} className='link'>
                                             <div className="card">
                                                 <img src={cartera.img} className="card-img-top" alt={`Modelo ${cartera.modelo}`} />
@@ -39,7 +43,7 @@ export const AllProducts = () => {
                         <div className="row">
                             {allPrendas.map((prenda, index) => {
                                 return (
-                                    <div className="col-6 col-md-3 my-3" key={index}>
+                                    <div className="col-6 col-md-3 my-3" key={index} data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}>
                                         <Link to={`/prenda/${prenda.modelo}`} className='link'>
                                             <div className="card">
                                                 <img src={prenda.img} className="card-img-top" alt={`Modelo ${prenda.modelo}`} />
