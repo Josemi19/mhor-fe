@@ -7,8 +7,8 @@ export const SingleProduct = () => {
     const { store, actions } = useContext(Context)
 
     const { id, product } = useParams()
-    const cartera = store.carteras.find((item) => item.id == id) // busca la cartera en data
-    const prenda = store.prendas.find((item) => item.id == id) // busca la prenda en data
+    const cartera = store.carteras.find((item) => item?.id == id) // busca la cartera en data
+    const prenda = store.prendas.find((item) => item?.id == id) // busca la prenda en data
     const existe = actions.addToCart() // busca si el producto esta en el carrito
     return (
         <>
