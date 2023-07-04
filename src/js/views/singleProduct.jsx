@@ -9,7 +9,6 @@ export const SingleProduct = () => {
     const { id, product } = useParams()
     const cartera = store.carteras.find((item) => item?.id == id) // busca la cartera en data
     const prenda = store.prendas.find((item) => item?.id == id) // busca la prenda en data
-    const existe = actions.addToCart() // busca si el producto esta en el carrito
     return (
         <>
             {
@@ -28,7 +27,7 @@ export const SingleProduct = () => {
                                 </div>
 
                                 <div className='d-flex justify-content-end mb-2 p-3 button-single'>
-                                    {existe == undefined
+                                    {actions.addToCart(cartera) == undefined
                                         ?
                                         <button className="btn btn-dark" onClick={() => actions.addToCart(cartera)}>Agregar al carrito</button>
                                         :
@@ -51,7 +50,7 @@ export const SingleProduct = () => {
                             </div>
 
                             <div className='d-flex justify-content-end mb-2 p-3 button-single'>
-                                {existe == undefined
+                                {actions.addToCart(prenda) == undefined
                                     ?
                                     <button className="btn btn-dark" onClick={() => actions.addToCart(prenda)}>Agregar al carrito</button>
                                     :
