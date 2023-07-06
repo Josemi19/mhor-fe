@@ -71,7 +71,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 				})
 				const data = await response.json()
-				setStore({...store, carteras: data.data})
+				setStore({...store, prendas: data.data})
 			},
 
 			existeProducto: (product) => {
