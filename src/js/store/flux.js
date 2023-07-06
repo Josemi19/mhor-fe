@@ -9,6 +9,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			prendas:[]
 		},
 		actions: {
+			
 			addToCart: (product) => {
 				const store = getStore()
 				let exist = store.cart.find((item) => (item.id == product.id && item.attributes.nombre == product.attributes.nombre))
@@ -32,6 +33,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					localStorage.setItem("cart", JSON.stringify(newCart))
 				}
 			},
+
 			getTotal: () => {
 				const store = getStore()
 				let total = 0
@@ -59,6 +61,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const data = await response.json()
 				setStore({...store, carteras: data.data})
 			},
+
 			getPrendas: async () => {
 				const store = getStore()
 				const response = await fetch(`${process.env.BACKEND_URL}/prendas?populate=*`, {
@@ -70,6 +73,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const data = await response.json()
 				setStore({...store, carteras: data.data})
 			},
+
 			existeProducto: (product) => {
 				const store = getStore()
 				let existe = store.cart.find((item) => item.id == product.id && item.attributes.nombre == product.attributes.nombre)
