@@ -113,7 +113,7 @@ export const Pedido = () => {
                     <input
                         type="email"
                         className='form-control mb-3'
-                        placeholder='Correo electronico'
+                        placeholder='Correo electrónico'
                         name='correo'
                         value={userData.correo}
                         onChange={(e) => handleChange(e)}
@@ -121,7 +121,7 @@ export const Pedido = () => {
                     <input
                         type="text"
                         className='form-control mb-3'
-                        placeholder='Numero de Telefono'
+                        placeholder='Número de Teléfono'
                         name='numero'
                         value={userData.numero}
                         onChange={(e) => handleChange(e)}
@@ -135,11 +135,11 @@ export const Pedido = () => {
                         value={userData.nombre}
                         onChange={(e) => handleChange(e)}
                     />
-                    <label className='form-label fw-semibold'>Direccion</label>
+                    <label className='form-label fw-semibold'>Dirección</label>
                     <input
                         type="text"
                         className='form-control mb-2'
-                        placeholder='Direccion'
+                        placeholder='Dirección'
                         name='direccion'
                         value={userData.direccion}
                         onChange={(e) => handleChange(e)}
@@ -163,12 +163,12 @@ export const Pedido = () => {
                     <input
                         type="number"
                         className='form-control mb-3'
-                        placeholder='Codigo Postal'
+                        placeholder='Código Postal'
                         name='codigoPostal'
                         value={userData.codigoPostal}
                         onChange={(e) => handleChange(e)}
                     />
-                    <label className='form-label fw-semibold'>Informacion de Pago</label>
+                    <label className='form-label fw-semibold'>Información de Pago</label>
                     <Accordion />
                 </form>
                 <div className="form-check form-check-reverse">
@@ -184,7 +184,7 @@ export const Pedido = () => {
                         }}
                     />
                     <label className="form-check-label" htmlFor="reverseCheck1">
-                        ¿Desea guardar su informacion?
+                        ¿Desea guardar su información?
                     </label>
                 </div>
                 <div className='d-flex justify-content-end mt-2'>

@@ -18,7 +18,7 @@ export const Accordion = () => {
                 <div className="accordion-item">
                     <h4 className="accordion-header">
                         <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Pago Movil
+                            Pago Móvil
                         </button>
                     </h4>
                     <div id="collapseOne" className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
@@ -31,7 +31,7 @@ export const Accordion = () => {
                             <br />
                             <span>Banco: <b>0105 - Mercantil</b></span>
                             <br />
-                            <span className='me-1'>Nro. de Telefono: <b>0424-107-1806</b></span>
+                            <span className='me-1'>Nro. de Teléfono: <b>0424-107-1806</b></span>
                             <CopyToClipboard
                                 text="1071806"
                                 onCopy={() => toast.success("Copiado", {
@@ -47,7 +47,7 @@ export const Accordion = () => {
                                 <i className="fa-solid fa-copy"></i>
                             </CopyToClipboard>
                             <br />
-                            <span className='me-1'>Nro. de Cedula: <b>27223205</b></span>
+                            <span className='me-1'>Nro. de Cédula: <b>27223205</b></span>
                             <CopyToClipboard
                                 text="27223205"
                                 onCopy={() => toast.success("Copiado", {
@@ -91,7 +91,7 @@ export const Accordion = () => {
                                 <i className="fa-solid fa-copy"></i>
                             </CopyToClipboard>
                             <br />
-                            <span className='me-1'>Nro. de Telefono: <b>+58 4241071806</b></span>
+                            <span className='me-1'>Nro. de Teléfono: <b>+58 4241071806</b></span>
                             <CopyToClipboard
                                 text="4241071806"
                                 onCopy={() => toast.success("Copiado", {

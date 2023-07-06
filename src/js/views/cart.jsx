@@ -11,7 +11,7 @@ export const Cart = () => {
                 <h2>Carrito de compras</h2>
                 {store.cart == ''
                     ?
-                    <div>Su Carrito esta vacio</div>
+                    <div>Su Carrito está vacío</div>
                     :
                     <div>
                         <h6>Resumen de compra</h6>
@@ -40,7 +40,7 @@ export const Cart = () => {
                             <div className='fw-bold'>Total:</div>
                             <div className='fw-semibold fs-5'>{`$${actions.getTotal()} USD`}</div>
                             <span>El total no refleja los costos de envio,</span>
-                            <span>los mismos dependeran de la zona/ciudad </span>
+                            <span>los mismos dependerán de la zona/ciudad </span>
                             <span>a la que se haga el pedido.</span>
                             <Link to={"/pedido"} className="btn btn-dark mt-2">Realizar Pedido</Link>
                         </div>
