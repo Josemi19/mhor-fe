@@ -1,12 +1,10 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import "../../styles/cards.css"
-import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Context } from '../store/appContext';
 import "../../styles/loader.css"
 
-AOS.init();
 
 export const Cards = ({ categoria }) => {
     const { store } = useContext(Context)

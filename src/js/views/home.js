@@ -1,19 +1,14 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import { Carousel } from "../component/Carousel.jsx";
 import { Cards } from "../component/Cards.jsx";
 import { ItemCar } from "../component/itemCar.jsx";
 import foto1 from "../../img/foto1.jpg"
-import { Context } from "../store/appContext.js";
+import AOS from 'aos';
+
+AOS.init();
 
 
 export const Home = () => {
-	const {actions ,store} = useContext(Context)
-
-	useEffect(() => {
-		actions.getCarteras()
-		actions.getPrendas()
-	}, [])
-
 	return (
 		<div className="text-center" style={{ "minHeight": "85vh" }}>
 			<Carousel />

@@ -3,11 +3,9 @@ import { useParams } from 'react-router'
 import { Link } from 'react-router-dom'
 import { ItemCar } from '../component/itemCar.jsx'
 import "../../styles/cards.css"
-import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Context } from '../store/appContext'
 
-AOS.init();
 
 export const AllProducts = () => {
     const { categoria } = useParams()
