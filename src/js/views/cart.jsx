@@ -7,7 +7,7 @@ export const Cart = () => {
     const { store, actions } = useContext(Context)
     return (
         <>
-            <div className="container text-center bg-light mt-3 container-cart">
+            <div className="container text-center bg-light mt-3 container-cart" style={{"minHeight": "85vh"}}>
                 <h2>Carrito de compras</h2>
                 {store.cart == ''
                     ?

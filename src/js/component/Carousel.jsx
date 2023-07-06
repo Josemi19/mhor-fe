@@ -3,12 +3,14 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../../styles/carousel.css"
+import foto1 from "../../img/SILVIA-3.jpg"
+import foto2 from "../../img/SILVIA-4.jpg"
+import foto3 from "../../img/ALANYS-4.jpg"
 
-const pictures = ["https://res.cloudinary.com/drwck4b6d/image/upload/v1685985109/SILVIA-3_gou3e6.jpg", "https://res.cloudinary.com/drwck4b6d/image/upload/v1685985106/SILVIA-4_kxwgdf.jpg", "https://res.cloudinary.com/drwck4b6d/image/upload/v1685985106/ALANYS-4_ekwtlf.jpg"]
 export class Carousel extends Component {
     render() {
         const settings = {
-            dots: true,
+            dots: false,
             fade: true,
             infinite: true,
             slidesToShow: 1,
@@ -16,21 +18,38 @@ export class Carousel extends Component {
             autoplay: true,
             speed: 2000,
             autoplaySpeed: 1500,
-            cssEase: "linear"
+            cssEase: "linear",
         };
 
         return (
-            <div className="container">
+            <>
                 <Slider {...settings}>
-                    {pictures.map((pic, index) => {
-                        return (
-                            <div className="w-100" key={index}>
-                                <img src={pic} className="foto w-100" />
-                            </div>
-                        )
-                    })}
+                    <div className="w-100">
+                        <img src={foto1} className="foto w-100" />
+                        <div className="fondo-carrusel"></div>
+                        <div className="texto-carrusel">
+                            <h1 className="titulo-carrusel">Mhór Style</h1>
+                            <p className="parrafo-carrusel">Piezas únicas y hechas a mano en Venezuela</p>
+                        </div>
+                    </div>
+                    <div className="w-100">
+                        <img src={foto2} className="foto w-100" />
+                        <div className="fondo-carrusel"></div>
+                        <div className="texto-carrusel">
+                            <h1 className="titulo-carrusel">Mhór Style</h1>
+                            <p className="parrafo-carrusel">Piezas únicas y hechas a mano en Venezuela</p>
+                        </div>
+                    </div>
+                    <div className="w-100">
+                        <img src={foto3} className="foto w-100" />
+                        <div className="fondo-carrusel"></div>
+                        <div className="texto-carrusel">
+                            <h1 className="titulo-carrusel">Mhór Style</h1>
+                            <p className="parrafo-carrusel">Piezas únicas y hechas a mano en Venezuela</p>
+                        </div>
+                    </div>
                 </Slider>
-            </div>
+            </>
         );
     }
 }

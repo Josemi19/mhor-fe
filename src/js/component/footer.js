@@ -4,7 +4,7 @@ export const Footer = () => (
 	<div className="footer w-100 py-3">
 		<div className="container-fluid  d-flex justify-content-between">
 			<div className="flex-column d-flex">
-				<span>© Mhor Style 2022</span>
+				<span>© Mhor Style 2023</span>
 			</div>
 			<div className="d-flex gap-3">
 				<a href="https://instagram.com/mhorstyle?igshid=MTIyMzRjYmRlZg==" className="navbar-brand" target="_blank"><i className="bi bi-instagram" style={{color: "#E4405F"}}></i></a>

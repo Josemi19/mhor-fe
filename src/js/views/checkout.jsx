@@ -1,10 +1,9 @@
 import React from 'react'
-import logo from "../../img/logo.jpg"
 
 export const Checkout = () => {
     return (
         <>
-            <div className="text-center d-flex flex-column justify-content-center" style={{ "height": "85vh" }}>
+            <div className="text-center d-flex flex-column justify-content-center" style={{"minHeight": "85vh"}}>
                 <div className='bg-light p-2'>
                     <h4>Gracias por tu compra</h4>
                     <div className='border border-dark'>
