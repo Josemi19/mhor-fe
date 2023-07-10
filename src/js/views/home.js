@@ -10,7 +10,7 @@ AOS.init();
 
 export const Home = () => {
 	return (
-		<div className="text-center" style={{ "minHeight": "85vh" }}>
+		<div className="text-center">
 			<Carousel />
 			<div className="container">
 				<h1 className="my-3">PRODUCTOS</h1>

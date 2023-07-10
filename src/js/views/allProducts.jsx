@@ -15,13 +15,13 @@ export const AllProducts = () => {
             {
                 categoria == "carteras"
                     ?
-                    <div className="container text-center" style={{ "minHeight": "85vh" }}>
+                    <div className="container text-center">
                         <div className='fs-3 categoriaBottom mt-3'>{categoria.charAt(0).toUpperCase() + categoria.slice(1)}</div>
                         <div className="row">
                             {store.carteras.length != 0 ?
                                 store.carteras.sort((a, b) => a.attributes.nombre.localeCompare(b.attributes.nombre)).map((cartera, index) => {
                                     return (
-                                        <div className="col-6 col-md-3 my-3" key={index} data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}>
+                                        <div className="col-6 col-md-3 my-3" key={index} data-aos="fade-right">
                                             <Link to={`/cartera/${cartera.id}`} className='link'>
                                                 <div className="card">
                                                     <img src={cartera.attributes.img.data[0].attributes.url} className="card-img-top" alt={`Modelo ${cartera.attributes.nombre}`} />
@@ -43,13 +43,13 @@ export const AllProducts = () => {
                         </div>
                     </div>
                     :
-                    <div className="container text-center" style={{ "minHeight": "85vh" }}>
+                    <div className="container text-center">
                         <div className='fs-3 categoriaBottom mt-3'>{categoria.charAt(0).toUpperCase() + categoria.slice(1)}</div>
                         <div className="row">
                             {store.prendas.length != 0 ?
                                 store.prendas.map((prenda, index) => {
                                     return (
-                                        <div className="col-6 col-md-3 my-3" key={index} data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}>
+                                        <div className="col-6 col-md-3 my-3" key={index} data-aos="fade-right">
                                             <Link to={`/prenda/${prenda.id}`} className='link'>
                                                 <div className="card">
                                                     <img src={prenda.attributes.img.data[0].attributes.url} className="card-img-top" alt={`Modelo ${prenda.attributes.modelo}`} />
