@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useParams } from 'react-router'
 import { Link } from 'react-router-dom'
 import { ItemCar } from '../component/itemCar.jsx'
@@ -10,6 +10,11 @@ import { Context } from '../store/appContext'
 export const AllProducts = () => {
     const { categoria } = useParams()
     const { store } = useContext(Context)
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
+
     return (
         <>
             {

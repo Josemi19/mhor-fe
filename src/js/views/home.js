@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Carousel } from "../component/Carousel.jsx";
 import { Cards } from "../component/Cards.jsx";
 import { ItemCar } from "../component/itemCar.jsx";
 import foto1 from "../../img/foto1.jpg"
 import AOS from 'aos';
+import { Context } from "../store/appContext.js";
 
 AOS.init();
 
-
 export const Home = () => {
+	const { actions } = useContext(Context)
+
 	return (
 		<div className="text-center">
 			<Carousel />

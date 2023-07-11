@@ -1,22 +1,22 @@
-import {toast} from "react-toastify"
+import { toast } from "react-toastify"
 
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			cart: JSON.parse(localStorage.getItem("cart")) || [],
 			dolar: null,
-			carteras:[],
-			prendas:[]
+			carteras: [],
+			prendas: []
 		},
 		actions: {
-			
+
 			addToCart: (product) => {
 				const store = getStore()
 				let exist = store.cart.find((item) => (item.id == product.id && item.attributes.nombre == product.attributes.nombre))
-				if(exist == undefined){
+				if (exist == undefined) {
 					let newCart = [...store.cart, product]
-					setStore({...store, cart: newCart})
-					localStorage.setItem("cart", JSON.stringify(newCart) )
+					setStore({ ...store, cart: newCart })
+					localStorage.setItem("cart", JSON.stringify(newCart))
 					toast.success("Agregado con exito", {
 						position: "top-right",
 						autoClose: 2000,
@@ -26,10 +26,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 						draggable: true,
 						progress: undefined,
 						theme: "dark",
-						});
-				}else{
+					});
+				} else {
 					let newCart = store.cart.filter((item) => item.id != product.id && item.attributes.nombre != product.attributes.nombre)
-					setStore({...store, cart: newCart})
+					setStore({ ...store, cart: newCart })
 					localStorage.setItem("cart", JSON.stringify(newCart))
 				}
 			},
@@ -47,37 +47,46 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const response = await fetch("https://venecodollar.vercel.app/api/v1/dollar")
 				const data = await response.json()
 				const store = getStore()
-				setStore({...store, dolar: data.Data.entities[0].info})
+				setStore({ ...store, dolar: data.Data.entities[0].info })
 			},
 
 			getCarteras: async () => {
 				const store = getStore()
 				const response = await fetch(`${process.env.BACKEND_URL}/carteras?populate=*`, {
 					method: 'GET',
-					headers:{
+					headers: {
 						"Authorization": `Bearer ${process.env.API_KEY}`
 					}
 				})
 				const data = await response.json()
-				setStore({...store, carteras: data.data})
+				setStore({ ...store, carteras: data.data })
 			},
 
 			getPrendas: async () => {
 				const store = getStore()
 				const response = await fetch(`${process.env.BACKEND_URL}/prendas?populate=*`, {
 					method: 'GET',
-					headers:{
+					headers: {
 						"Authorization": `Bearer ${process.env.API_KEY}`
 					}
 				})
 				const data = await response.json()
-				setStore({...store, prendas: data.data})
+				setStore({ ...store, prendas: data.data })
 			},
 
 			existeProducto: (product) => {
 				const store = getStore()
 				let existe = store.cart.find((item) => item.id == product.id && item.attributes.nombre == product.attributes.nombre)
 				return existe
+			},
+
+			isAPIActive: async () => {
+				const response = await fetch(`${process.env.BACKEND_URL}/prendas`, {
+					method: 'GET',
+					headers: {
+						"Authorization": `Bearer ${process.env.API_KEY}`
+					}
+				})
 			}
 		}
 	};
