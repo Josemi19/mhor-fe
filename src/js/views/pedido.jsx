@@ -105,8 +105,8 @@ export const Pedido = () => {
             <div className="container">
                 <form className='my-2' ref={form}>
 
-                    <input type="text" value={store.cart.map((item) => { return item.nombre })} readOnly style={{ display: "none" }} name='productos' />
-                    <input type="text" value={store.cart.map((item) => { return item.img })} readOnly style={{ display: "none" }} name='fotos' />
+                    <input type="text" value={store.cart.map((item) => { return item.attributes.nombre })} readOnly style={{ display: "none" }} name='productos' />
+                    <input type="text" value={store.cart.map((item) => { return item.attributes.img.data[0].attributes.url })} readOnly style={{ display: "none" }} name='fotos' />
                     <input type="text" value={actions.getTotal()} readOnly style={{ display: "none" }} name='total' />
 
                     <label className='form-label fw-semibold'>Contacto</label>
