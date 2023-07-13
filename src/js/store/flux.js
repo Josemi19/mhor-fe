@@ -5,8 +5,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			cart: JSON.parse(localStorage.getItem("cart")) || [],
 			dolar: null,
-			carteras: [],
-			prendas: []
+			carteras: JSON.parse(sessionStorage.getItem("carteras")) || [],
+			prendas: JSON.parse(sessionStorage.getItem("prendas")) || []
 		},
 		actions: {
 
@@ -52,26 +52,42 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			getCarteras: async () => {
 				const store = getStore()
-				const response = await fetch(`${process.env.BACKEND_URL}/carteras?populate=*`, {
-					method: 'GET',
-					headers: {
-						"Authorization": `Bearer ${process.env.API_KEY}`
+				if (store.carteras.length != 0) return
+				try {
+					const response = await fetch(`${process.env.BACKEND_URL}/carteras?populate=*`, {
+						method: 'GET',
+						headers: {
+							"Authorization": `Bearer ${process.env.API_KEY}`
+						}
+					})
+					if (response.ok) {
+						const data = await response.json()
+						setStore({ ...store, carteras: data.data })
+						sessionStorage.setItem("carteras", JSON.stringify(data.data))
 					}
-				})
-				const data = await response.json()
-				setStore({ ...store, carteras: data.data })
+				} catch (error) {
+					console.error(error)
+				}
 			},
 
 			getPrendas: async () => {
 				const store = getStore()
-				const response = await fetch(`${process.env.BACKEND_URL}/prendas?populate=*`, {
-					method: 'GET',
-					headers: {
-						"Authorization": `Bearer ${process.env.API_KEY}`
+				if (store.prendas.length != 0) return
+				try {
+					const response = await fetch(`${process.env.BACKEND_URL}/prendas?populate=*`, {
+						method: 'GET',
+						headers: {
+							"Authorization": `Bearer ${process.env.API_KEY}`
+						}
+					})
+					if (response.ok) {
+						const data = await response.json()
+						setStore({ ...store, prendas: data.data })
+						sessionStorage.setItem("prendas", JSON.stringify(data.data))
 					}
-				})
-				const data = await response.json()
-				setStore({ ...store, prendas: data.data })
+				} catch (error) {
+					console.error(error)
+				}
 			},
 
 			existeProducto: (product) => {

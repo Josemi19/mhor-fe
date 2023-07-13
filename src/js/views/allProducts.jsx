@@ -21,7 +21,7 @@ export const AllProducts = () => {
                 categoria == "carteras"
                     ?
                     <div className="container text-center">
-                        <div className='fs-3 categoriaBottom mt-3'>{categoria.charAt(0).toUpperCase() + categoria.slice(1)}</div>
+                        <div className='fs-1 categoriaBottom mt-3'>{categoria.charAt(0).toUpperCase() + categoria.slice(1)}</div>
                         <div className="row">
                             {store.carteras.length != 0 ?
                                 store.carteras.sort((a, b) => a.attributes.nombre.localeCompare(b.attributes.nombre)).map((cartera, index) => {

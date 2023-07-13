@@ -15,6 +15,7 @@ export const Accordion = () => {
     return (
         <>
             <div className="accordion" id="accordionExample">
+                {/* PAGO MOVIL */}
                 <div className="accordion-item">
                     <h4 className="accordion-header">
                         <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -65,6 +66,8 @@ export const Accordion = () => {
                         </div>
                     </div>
                 </div>
+                {/* TERMINA PAGO MOVIL */}
+                {/* BINANCE */}
                 <div className="accordion-item">
                     <h4 className="accordion-header">
                         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -147,6 +150,7 @@ export const Accordion = () => {
                         </div>
                     </div>
                 </div>
+                {/* TERMINA BINANCE */}
             </div >
         </>
     )
