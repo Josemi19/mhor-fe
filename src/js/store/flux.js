@@ -96,13 +96,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 				return existe
 			},
 
-			isAPIActive: async () => {
-				const response = await fetch(`${process.env.BACKEND_URL}/prendas`, {
-					method: 'GET',
-					headers: {
-						"Authorization": `Bearer ${process.env.API_KEY}`
-					}
+			handleFinishPayment: () => {
+				const store = getStore()
+				toast.success(`Pedido realizado con exito`, {
+					position: "top-right",
+					autoClose: 2500,
+					hideProgressBar: false,
+					closeOnClick: true,
+					pauseOnHover: true,
+					draggable: true,
+					progress: undefined,
+					theme: "dark",
 				})
+				setStore({ ...store, cart: [] })
+				localStorage.removeItem("cart")
 			}
 		}
 	};

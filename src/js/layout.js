@@ -14,6 +14,7 @@ import { AllProducts } from "./views/allProducts.jsx";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { Checkout } from "./views/checkout.jsx";
+import NotFound from "./views/404.jsx";
 
 //create your first component
 const Layout = () => {
@@ -22,22 +23,22 @@ const Layout = () => {
 	const basename = process.env.BASENAME || "";
 
 	return (
-			<BrowserRouter basename={basename}>
-				<ScrollToTop>
-					<ToastContainer/>
-					<Navbar />
-					<Routes>
-						<Route path="/" element={<Home />} />
-						<Route path="/:product/:id" element={<SingleProduct/>}/>
-						<Route path="/cart" element={<Cart/>}/>
-						<Route path="/pedido" element={<Pedido/>}/>
-						<Route path="/all/:categoria" element={<AllProducts/>}/>
-						<Route path="checkout" element={<Checkout/>}/>
-						<Route path="*" element={<h1>Not found!</h1>} />
-					</Routes>
-					<Footer />
-				</ScrollToTop>
-			</BrowserRouter>
+		<BrowserRouter basename={basename}>
+			<ScrollToTop>
+				<ToastContainer />
+				<Navbar />
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/:product/:id" element={<SingleProduct />} />
+					<Route path="/cart" element={<Cart />} />
+					<Route path="/pedido" element={<Pedido />} />
+					<Route path="/all/:categoria" element={<AllProducts />} />
+					<Route path="checkout" element={<Checkout />} />
+					<Route path="*" element={<NotFound />} />
+				</Routes>
+				<Footer />
+			</ScrollToTop>
+		</BrowserRouter>
 	);
 };
 

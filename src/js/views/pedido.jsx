@@ -1,6 +1,5 @@
 import React, { useContext, useRef, useState } from 'react'
 import { toast } from 'react-toastify'
-import { Accordion } from '../component/Accordion.jsx'
 import { Context } from '../store/appContext.js'
 import "../../styles/accordion.css"
 import { Resumen } from '../component/Resumen.jsx'
@@ -61,19 +60,8 @@ export const Pedido = () => {
             emailjs.sendForm(process.env.SERVICE_ID, process.env.ADMIN_TEMPLATE, form.current, process.env.PUBLIC_KEY)
                 .then((result) => {
                     if (result.text == 'OK') {
-                        toast.success(`Pedido realizado con exito`, {
-                            position: "top-right",
-                            autoClose: 2500,
-                            hideProgressBar: false,
-                            closeOnClick: true,
-                            pauseOnHover: true,
-                            draggable: true,
-                            progress: undefined,
-                            theme: "dark",
-                        })
                         navigate("/checkout")
                         setUserData(initialValue)
-                        localStorage.removeItem("cart")
                     }
                 }, (error) => {
                     console.error(error.text)
@@ -168,8 +156,6 @@ export const Pedido = () => {
                         value={userData.codigoPostal}
                         onChange={(e) => handleChange(e)}
                     />
-                    <label className='form-label fw-semibold'>Información de Pago</label>
-                    <Accordion />
                 </form>
                 <div className="form-check form-check-reverse">
                     <input
