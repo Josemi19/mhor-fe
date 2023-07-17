@@ -1,9 +1,8 @@
-.foto{
-    max-height: 600px;
-    /* max-width: 700px; */
+.foto {
+    max-height: 1080px;
 }
 
-.fondo-carrusel{
+.fondo-carrusel {
     position: absolute;
     top: 0px;
     width: 100%;
@@ -12,17 +11,17 @@
     opacity: 0.3;
 }
 
-.titulo-carrusel{
+.titulo-carrusel {
     color: white;
     font-size: 3rem;
 }
 
-.parrafo-carrusel{
+.parrafo-carrusel {
     color: white;
     font-size: 1.5rem;
 }
 
-.texto-carrusel{
+.texto-carrusel {
     position: absolute;
     bottom: 20px;
     display: flex;
@@ -42,15 +41,16 @@
 }
 
 @media (max-width: 440px) {
-    .foto{
-        max-height: 300px;
+    .foto {
+        max-height: 390px;
     }
-    .titulo-carrusel{
+
+    .titulo-carrusel {
         color: white;
         font-size: 2rem;
     }
-    
-    .parrafo-carrusel{
+
+    .parrafo-carrusel {
         color: white;
         font-size: 1.2rem;
     }

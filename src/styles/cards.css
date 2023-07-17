@@ -24,13 +24,3 @@
     flex-direction: column;
     justify-content: center;
 }
-
-.card-img-top {
-    min-height: 405px;
-}
-
-@media (max-width: 440px) {
-    .card-img-top {
-        min-height: 225px;
-    }
-}
