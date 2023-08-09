@@ -14,7 +14,7 @@ export const Cards = ({ categoria }) => {
                 categoria == "carteras"
                     ?
                     <div className="row">
-                        <Link to={`/all/${categoria}`} className='mt-4 categoria fs-1' data-aos="fade-up">Carteras</Link>
+                        <Link to={`/all/${categoria}`} className='mt-4 categoria fs-1' data-aos="fade-up">Bolsos</Link>
                         {store.carteras.length != 0 ?
                             store.carteras.map((item, index) => {
                                 return (
@@ -40,7 +40,7 @@ export const Cards = ({ categoria }) => {
                     </div>
                     :
                     <div className="row">
-                        <Link to={`/all/${categoria}`} className='mt-4 categoria fs-1' data-aos="fade-up">Prendas</Link>
+                        <Link to={`/all/${categoria}`} className='mt-4 categoria fs-1' data-aos="fade-up">Ropa</Link>
                         {store.prendas.length != 0 ?
                             store.prendas.map((item, index) => {
                                 return (

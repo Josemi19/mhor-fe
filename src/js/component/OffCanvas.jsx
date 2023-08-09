@@ -26,7 +26,10 @@ export const OffCanvas = () => {
                     <div className='mx-2 fs-3 py-3'>
                         <Link to={"/all/prendas"} className='link offcanvasItem'>PRENDAS</Link>
                     </div>
-                    <div className="d-flex gap-3 h-75 align-items-end social-media">
+                    <div className='mx-2 fs-3 py-3'>
+                        <Link to={"/about-us"} className='link offcanvasItem'>NUESTRA MARCA</Link>
+                    </div>
+                    <div className="d-flex gap-3 align-items-end social-media-canvas">
                         <a href="https://instagram.com/mhorstyle?igshid=MTIyMzRjYmRlZg==" className="navbar-brand" target="_blank"><i className="bi bi-instagram" style={{ color: "#E4405F" }}></i></a>
                         <a href="mailto:mhorstyle@gmail.com" className="navbar-brand" target="_blank"><i className="bi bi-envelope-fill"></i></a>
                         <a href="https://api.whatsapp.com/send/?phone=584140264565&text&type=phone_number&app_absent=0" className="navbar-brand" target="_blank"><i className="bi bi-whatsapp" style={{ color: "#25D366" }}></i></a>

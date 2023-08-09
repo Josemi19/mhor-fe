@@ -15,14 +15,14 @@ export const SingleProduct = () => {
             {
                 product == "cartera"
                     ?
-                    <div className="container mt-3 container-single" style={{"minHeight": "85vh"}}>
+                    <div className="container mt-3 container-single" style={{ "minHeight": "85vh" }}>
                         <div className='card container-foto'>
                             <img className='w-100 foto-single' src={cartera?.attributes.img.data[0].attributes.url} alt="..." />
                             <div className='d-flex flex-column justify-content-between'>
                                 <div className='d-flex justify-content-between p-3 caption-single'>
                                     <div>
                                         <p className='card-title'>{cartera?.attributes.nombre}</p>
-                                        <p className='card-text'>{`Material: ${cartera?.attributes.material}`}</p>
+                                        <p className='card-text'>{`Descripción: ${cartera?.attributes.descripcion}`}</p>
                                     </div>
                                     <p className='card-text'>{`$${cartera?.attributes.precio} USD`}</p>
                                 </div>
@@ -39,13 +39,13 @@ export const SingleProduct = () => {
                         </div>
                     </div>
                     :
-                    <div className="container mt-3 container-single" style={{"minHeight": "85vh"}}>
+                    <div className="container mt-3 container-single" style={{ "minHeight": "85vh" }}>
                         <div className='border border-dark bg-light container-foto'>
                             <img className='w-100 foto-single' src={prenda?.attributes.img.data[0].attributes.url} alt="..." />
                             <div className='d-flex justify-content-between p-3 caption-single'>
                                 <div>
                                     <h3>{prenda?.attributes.nombre}</h3>
-                                    <h6>{`Material: ${prenda?.attributes.talla}`}</h6>
+                                    <h6>{`Material: ${prenda?.attributes.descripcion}`}</h6>
                                 </div>
                                 <h6>{`$${prenda?.attributes.precio} USD`}</h6>
                             </div>

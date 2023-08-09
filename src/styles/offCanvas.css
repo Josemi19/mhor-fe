@@ -1,3 +1,14 @@
 .offcanvas-lg {
     max-width: 60%;
 }
+
+.social-media-canvas {
+    position: fixed;
+    bottom: 0;
+}
+
+@media only screen and (min-width: 990px) {
+    .social-media-canvas {
+        display: none !important;
+    }
+}
