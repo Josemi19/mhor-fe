@@ -4,6 +4,7 @@ import { Cards } from "../component/Cards.jsx";
 import { ItemCar } from "../component/itemCar.jsx";
 import foto2 from "../../img/foto2.jpg"
 import AOS from 'aos';
+import { Helmet } from "react-helmet";
 
 AOS.init();
 
@@ -11,6 +12,9 @@ export const Home = () => {
 
 	return (
 		<div className="text-center">
+			<Helmet>
+				<title>Mhór Style</title>
+			</Helmet>
 			<Carousel />
 			<div className="container">
 				<h1 className="my-3">PRODUCTOS</h1>
@@ -19,8 +23,8 @@ export const Home = () => {
 					<div className="fondo-home"></div>
 					<p className="texto-home">Queremos reafirmar tú estilo único e irrepetible</p>
 				</div>
-				<Cards categoria={"carteras"} />
-				<Cards categoria={"prendas"} />
+				<Cards categoria={"bolsos"} />
+				<Cards categoria={"ropa"} />
 			</div>
 			<ItemCar />
 		</div>

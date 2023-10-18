@@ -2,12 +2,16 @@ import React, { useContext } from 'react'
 import { Context } from '../store/appContext'
 import "../../styles/cart.css"
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 
 export const Cart = () => {
     const { store, actions } = useContext(Context)
     return (
         <>
-            <div className="container text-center bg-light mt-3 container-cart" style={{"minHeight": "85vh"}}>
+            <div className="container text-center bg-light mt-3 container-cart" style={{ "minHeight": "85vh" }}>
+                <Helmet>
+                    <title>Mhór Style | Carrito</title>
+                </Helmet>
                 <h2>Carrito de compras</h2>
                 {store.cart == ''
                     ?

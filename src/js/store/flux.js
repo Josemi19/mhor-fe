@@ -44,10 +44,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			getDollarPrice: async () => {
-				const response = await fetch("https://venecodollar.vercel.app/api/v1/dollar")
+				const response = await fetch("https://venecodollar.vercel.app/api/v2/dollar/entity?name=BCV")
 				const data = await response.json()
 				const store = getStore()
-				setStore({ ...store, dolar: data.Data.entities[0].info })
+				setStore({ ...store, dolar: data.Data.info.dollar })
 			},
 
 			getCarteras: async () => {

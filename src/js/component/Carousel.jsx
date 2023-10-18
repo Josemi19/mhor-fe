@@ -27,7 +27,7 @@ export class Carousel extends Component {
                 <Slider {...settings}>
                     {fotos.map((foto, index) => {
                         return (
-                            <div className="w-100" key={index}>
+                            <div key={index}>
                                 <img src={foto} className="foto w-100" />
                                 <div className="fondo-carrusel"></div>
                                 <div className="texto-carrusel">

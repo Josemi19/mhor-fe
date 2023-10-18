@@ -17,16 +17,16 @@ export const OffCanvas = () => {
                     <button type="button" className="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive" aria-label="Close"></button>
                 </div>
                 <div className="offcanvas-body ">
-                    <div className='mx-2 fs-3 py-3'>
+                    <div className='mx-2 fs-3 py-3' data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive">
                         <Link to={"/"} className='link offcanvasItem'>INICIO</Link>
                     </div>
-                    <div className='mx-2 fs-3 py-3'>
-                        <Link to={"/all/carteras"} className='link offcanvasItem'>CARTERAS</Link>
+                    <div className='mx-2 fs-3 py-3' data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive">
+                        <Link to={"/all/bolsos"} className='link offcanvasItem'>CARTERAS</Link>
                     </div>
-                    <div className='mx-2 fs-3 py-3'>
-                        <Link to={"/all/prendas"} className='link offcanvasItem'>PRENDAS</Link>
+                    <div className='mx-2 fs-3 py-3' data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive">
+                        <Link to={"/all/ropa"} className='link offcanvasItem'>PRENDAS</Link>
                     </div>
-                    <div className='mx-2 fs-3 py-3'>
+                    <div className='mx-2 fs-3 py-3' data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive">
                         <Link to={"/about-us"} className='link offcanvasItem'>NUESTRA MARCA</Link>
                     </div>
                     <div className="d-flex gap-3 align-items-end social-media-canvas">

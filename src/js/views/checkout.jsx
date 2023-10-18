@@ -14,7 +14,7 @@ export const Checkout = () => {
 
     return (
         <>
-            <div style={{ "minHeight": "85vh" }}>
+            <div style={{ "minHeight": "85vh", "padding": "10px" }}>
                 <div className="text-center d-flex flex-column border border-dark mt-3">
                     <div className='p-2'>
                         <h1>Gracias por tu compra</h1>

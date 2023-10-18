@@ -6,7 +6,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 export const PaymentMethods = () => {
     const { actions, store } = useContext(Context)
-    const precioDolar = store.dolar?.dollar.toFixed(2)
+    const precioDolar = store.dolar
 
     useEffect(() => {
         actions.getDollarPrice()

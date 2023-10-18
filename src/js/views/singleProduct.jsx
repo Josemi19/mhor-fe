@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useParams } from 'react-router'
 import { Context } from '../store/appContext'
 import "../../styles/singleProduct.css"
@@ -10,10 +10,14 @@ export const SingleProduct = () => {
     const cartera = store.carteras.find((item) => item?.id == id) // busca la cartera
     const prenda = store.prendas.find((item) => item?.id == id) // busca la prenda
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
+
     return (
         <>
             {
-                product == "cartera"
+                product == "bolso"
                     ?
                     <div className="container mt-3 container-single" style={{ "minHeight": "85vh" }}>
                         <div className='card container-foto'>

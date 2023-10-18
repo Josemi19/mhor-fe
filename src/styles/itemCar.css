@@ -1,4 +1,4 @@
-.item-car{
+.item-car {
     position: fixed;
     top: 650px;
     right: 20px;
@@ -12,13 +12,13 @@
     border-radius: 50px;
 }
 
-.item-car:hover{
+.item-car:hover {
     opacity: 1.0;
 }
 
 @media(max-width: 440px) {
-    .item-car{
-        top: 650px;
+    .item-car {
+        top: 550px;
         opacity: 0.7;
     }
 }

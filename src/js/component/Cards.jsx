@@ -11,7 +11,7 @@ export const Cards = ({ categoria }) => {
     return (
         <>
             {
-                categoria == "carteras"
+                categoria == "bolsos"
                     ?
                     <div className="row">
                         <Link to={`/all/${categoria}`} className='mt-4 categoria fs-1' data-aos="fade-up">Bolsos</Link>
@@ -19,7 +19,7 @@ export const Cards = ({ categoria }) => {
                             store.carteras.map((item, index) => {
                                 return (
                                     <div className={`col-6 col-md-3 my-3 ${index > 3 && "d-none"}`} key={index} data-aos="fade-right">
-                                        <Link to={`/cartera/${item.id}`} className='link'>
+                                        <Link to={`bolso/${item.id}`} className='link'>
                                             <div className="card">
                                                 <img src={item.attributes.img.data[0].attributes.url} className="card-img-top" alt={`Modelo ${item.attributes.modelo}`} />
                                                 <div className="card-body">
@@ -45,7 +45,7 @@ export const Cards = ({ categoria }) => {
                             store.prendas.map((item, index) => {
                                 return (
                                     <div className="col-6 col-md-3 my-3" key={index} data-aos="fade-right">
-                                        <Link to={`/prenda/${item.id}`} className='link'>
+                                        <Link to={`/ropa/${item.id}`} className='link'>
                                             <div className="card">
                                                 <img src={item.attributes.img.data[0].attributes.url} className="card-img-top" alt={`Modelo ${item.attributes.modelo}`} />
                                                 <div className="card-body">
