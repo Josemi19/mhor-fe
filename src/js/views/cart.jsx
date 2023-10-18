@@ -8,7 +8,7 @@ export const Cart = () => {
     const { store, actions } = useContext(Context)
     return (
         <>
-            <div className="container text-center bg-light mt-3 container-cart" style={{ "minHeight": "85vh" }}>
+            <div className="container text-center bg-light mt-3 container-cart" style={{ "minHeight": "80vh" }}>
                 <Helmet>
                     <title>Mhór Style | Carrito</title>
                 </Helmet>
@@ -32,7 +32,7 @@ export const Cart = () => {
                                             </div>
                                             <div className="col-4">
                                                 <div className='fw-semibold fs-5'>{`$${item.attributes.precio} USD`}</div>
-                                                <div className="mt-5" onClick={() => actions.addToCart(item)}>Eliminar</div>
+                                                <div className="mt-5 text-danger" onClick={() => actions.addToCart(item)}>Eliminar</div>
                                             </div>
                                         </div>
                                     </div>

@@ -13,7 +13,7 @@ export const OffCanvas = () => {
 
             <div className="offcanvas-lg offcanvas-end" tabIndex="-1" id="offcanvasResponsive" aria-labelledby="offcanvasResponsiveLabel">
                 <div className="offcanvas-header">
-                    <h5 className="offcanvas-title fw-semibold" id="offcanvasResponsiveLabel">MHOR STYLE</h5>
+                    <h5 className="offcanvas-title fw-semibold" id="offcanvasResponsiveLabel">MHÓR STYLE</h5>
                     <button type="button" className="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive" aria-label="Close"></button>
                 </div>
                 <div className="offcanvas-body ">
@@ -28,6 +28,9 @@ export const OffCanvas = () => {
                     </div>
                     <div className='mx-2 fs-3 py-3' data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive">
                         <Link to={"/about-us"} className='link offcanvasItem'>NUESTRA MARCA</Link>
+                    </div>
+                    <div className='mx-2 fs-3 py-3' data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive">
+                        <Link to={"/cart"} className='link offcanvasItem d-flex align-items-center gap-2'>CARRITO <span className='badge'>{store.cart.length}</span></Link>
                     </div>
                     <div className="d-flex gap-3 align-items-end social-media-canvas">
                         <a href="https://instagram.com/mhorstyle?igshid=MTIyMzRjYmRlZg==" className="navbar-brand" target="_blank"><i className="bi bi-instagram" style={{ color: "#E4405F" }}></i></a>

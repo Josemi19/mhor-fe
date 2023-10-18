@@ -15,17 +15,17 @@ export const Checkout = () => {
     return (
         <>
             <div style={{ "minHeight": "85vh", "padding": "10px" }}>
-                <div className="text-center d-flex flex-column border border-dark mt-3">
+                <div className="text-center d-flex flex-column border border-dark mt-3 rounded">
                     <div className='p-2'>
                         <h1>Gracias por tu compra</h1>
                         <h2>Por favor, selecciona uno de nuestros metodos de pago:</h2>
                         <PaymentMethods />
-                        <div>
+                        <div className='mt-2'>
                             <p>Recuerda enviarnos el comprobante de pago a nuestro<a href="https://api.whatsapp.com/send/?phone=584140264565&text&type=phone_number&app_absent=0" className="navbar-brand" target="_blank" style={{ color: "#25D366" }}> WhatsApp</a> para culminar tu compra</p>
                             <p>Podras ver un resumen de tu pedido en tu correo electrónico</p>
                         </div>
                         <h5>Esperamos verte de nuevo</h5>
-                        <button className='btn btn-dark' onClick={() => handleClick()}>Terminar Pedido</button>
+                        <button className='btn btn-dark mt-2' onClick={() => handleClick()}>Terminar Pedido</button>
                     </div>
                 </div>
             </div>

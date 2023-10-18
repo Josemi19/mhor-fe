@@ -7,6 +7,12 @@
     bottom: 0;
 }
 
+.badge {
+    color: white;
+    background-color: black;
+    border-radius: 50%;
+}
+
 @media only screen and (min-width: 990px) {
     .social-media-canvas {
         display: none !important;

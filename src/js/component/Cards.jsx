@@ -13,8 +13,8 @@ export const Cards = ({ categoria }) => {
             {
                 categoria == "bolsos"
                     ?
-                    <div className="row">
-                        <Link to={`/all/${categoria}`} className='mt-4 categoria fs-1' data-aos="fade-up">Bolsos</Link>
+                    <section className="row">
+                        <Link to={`/all/${categoria}`} className='mt-4 categoria fs-2' data-aos="fade-up">Bolsos</Link>
                         {store.carteras.length != 0 ?
                             store.carteras.map((item, index) => {
                                 return (
@@ -37,10 +37,10 @@ export const Cards = ({ categoria }) => {
                             </div>
                         }
                         <Link to={`/all/${categoria}`} className='mb-4 categoriaBottom fs-3'>Ver Todo</Link>
-                    </div>
+                    </section>
                     :
-                    <div className="row">
-                        <Link to={`/all/${categoria}`} className='mt-4 categoria fs-1' data-aos="fade-up">Ropa</Link>
+                    <section className="row">
+                        <Link to={`/all/${categoria}`} className='mt-4 categoria fs-2' data-aos="fade-up">Ropa</Link>
                         {store.prendas.length != 0 ?
                             store.prendas.map((item, index) => {
                                 return (
@@ -63,7 +63,7 @@ export const Cards = ({ categoria }) => {
                             </div>
                         }
                         <Link to={`/all/${categoria}`} className='mb-4 categoriaBottom fs-3'>Ver Todo</Link>
-                    </div>
+                    </section>
             }
         </>
     )

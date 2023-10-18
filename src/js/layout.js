@@ -15,6 +15,7 @@ import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { Checkout } from "./views/checkout.jsx";
 import NotFound from "./views/404.jsx";
+import { AboutUs } from "./views/AboutUs.jsx";
 
 //create your first component
 const Layout = () => {
@@ -33,7 +34,8 @@ const Layout = () => {
 					<Route path="/cart" element={<Cart />} />
 					<Route path="/pedido" element={<Pedido />} />
 					<Route path="/all/:categoria" element={<AllProducts />} />
-					<Route path="checkout" element={<Checkout />} />
+					<Route path="/checkout" element={<Checkout />} />
+					<Route path="/about-us" element={<AboutUs />} />
 					<Route path="*" element={<NotFound />} />
 				</Routes>
 				<Footer />

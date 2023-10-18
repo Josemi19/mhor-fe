@@ -11,22 +11,25 @@ AOS.init();
 export const Home = () => {
 
 	return (
-		<div className="text-center">
+		<main className="text-center">
 			<Helmet>
 				<title>Mhór Style</title>
 			</Helmet>
 			<Carousel />
-			<div className="container">
-				<h1 className="my-3">PRODUCTOS</h1>
+			<section className="container">
+				<h1 className="mt-3 mb-1">LA MARCA</h1>
+				<p>Integra diseño, fabricación y comercialización de: ropa, carteras y accesorios. Todos los atuendos buscan que tu estilo se reafirme como único e irrepetible.</p>
+				<p>La idea es que cada vez que uses nuestras piezas te sientas identificad@, segur@, cómod@ y confiad@; ya que resaltarás tu estilo con prendas de  altísima calidad con sello venezolano.</p>
+				<p>Las tendencias evolucionan o simplemente pasan, pero el estilo perdura por siempre.</p>
 				<div className="w-100 position-relative">
-					<img src={foto2} className="w-100 d-flex justify-content-end"></img>
-					<div className="fondo-home"></div>
+					<img src={foto2} className="w-100 d-flex justify-content-end rounded"></img>
+					<div className="fondo-home rounded"></div>
 					<p className="texto-home">Queremos reafirmar tú estilo único e irrepetible</p>
 				</div>
 				<Cards categoria={"bolsos"} />
 				<Cards categoria={"ropa"} />
-			</div>
+			</section>
 			<ItemCar />
-		</div>
+		</main>
 	)
 };
