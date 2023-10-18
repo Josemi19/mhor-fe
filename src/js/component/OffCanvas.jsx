@@ -21,10 +21,10 @@ export const OffCanvas = () => {
                         <Link to={"/"} className='link offcanvasItem'>INICIO</Link>
                     </div>
                     <div className='mx-2 fs-3 py-3' data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive">
-                        <Link to={"/all/bolsos"} className='link offcanvasItem'>CARTERAS</Link>
+                        <Link to={"/all/bolsos"} className='link offcanvasItem'>BOLSOS</Link>
                     </div>
                     <div className='mx-2 fs-3 py-3' data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive">
-                        <Link to={"/all/ropa"} className='link offcanvasItem'>PRENDAS</Link>
+                        <Link to={"/all/ropa"} className='link offcanvasItem'>ROPA</Link>
                     </div>
                     <div className='mx-2 fs-3 py-3' data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive">
                         <Link to={"/about-us"} className='link offcanvasItem'>NUESTRA MARCA</Link>
