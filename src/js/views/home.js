@@ -24,7 +24,7 @@ export const Home = () => {
 				<div className="w-100 position-relative">
 					<img src={foto2} className="w-100 d-flex justify-content-end rounded"></img>
 					<div className="fondo-home rounded"></div>
-					<p className="texto-home">Queremos reafirmar tú estilo único e irrepetible</p>
+					<p className="texto-home px-1">Queremos reafirmar tú estilo único e irrepetible</p>
 				</div>
 				<Cards categoria={"bolsos"} />
 				<Cards categoria={"ropa"} />

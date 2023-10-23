@@ -1,12 +1,13 @@
 .foto {
-    max-height: 1080px;
+    height: 100vh;
+    min-width: 100vw;
 }
 
 .fondo-carrusel {
     position: absolute;
     top: 0px;
     width: 100%;
-    height: 98%;
+    height: 99%;
     background-color: black;
     opacity: 0.3;
 }
